@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0f14" />
+    <title>Neon Notes — Project</title>
+    <meta name="description" content="Details about Neon Notes PWA project." />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container">
+        <a class="logo" href="../index.html#projects"><span>&lt;</span>Ayaan<span>/&gt;</span></a>
+        <nav class="site-nav">
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#skills">Skills</a>
+          <a href="../index.html#timeline">Timeline</a>
+          <a href="../index.html#projects">Projects</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="project-hero section">
+        <div class="container">
+          <a class="btn ghost" href="../index.html#projects">← Back to Projects</a>
+          <h1>Neon Notes</h1>
+          <p class="subtitle">A minimal note‑taking PWA with offline sync and keyboard‑first UX.</p>
+          <div class="cta-row">
+            <a class="btn primary" href="#">Live</a>
+            <a class="btn" href="#">Source Code</a>
+          </div>
+          <ul class="pill-list" style="margin-top:14px">
+            <li>PWA</li><li>TypeScript</li><li>IndexedDB</li><li>Service Worker</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Overview</h2>
+          <p>
+            Neon Notes is a fast, offline‑capable note app designed for speed and focus.
+            It caches assets, persists notes in IndexedDB, and provides a keyboard‑first
+            editing workflow with instant search and tagging.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Features</h2>
+          <ul>
+            <li>Offline support via Service Worker (installable PWA)</li>
+            <li>Local persistence with IndexedDB and background sync</li>
+            <li>Instant search and tag filters</li>
+            <li>Keyboard shortcuts for all core actions</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">Challenges</h2>
+          <p>
+            Implementing conflict‑free syncing and ensuring a smooth offline/online transition
+            required careful state handling and background sync strategies.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Ayaan • Project: Neon Notes</p>
+        <div class="footer-links"><a href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:ayaanazfar2000@gmail.com">Email</a></div>
+      </div>
+    </footer>
+
+    <script src="../assets/main.js"></script>
+  </body>
+  </html>

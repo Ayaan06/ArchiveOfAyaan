@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0f14" />
+    <title>Ayaan — Portfolio</title>
+    <meta name="description" content="Ayaan's portfolio: projects, timeline, and skills." />
+
+    <!-- Styles -->
+    <link rel="preload" href="assets/style.css" as="style" />
+    <link rel="stylesheet" href="assets/style.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container">
+        <a class="logo" href="#home" aria-label="Ayaan home">
+          <span>&lt;</span>Ayaan<span>/&gt;</span>
+        </a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <nav class="site-nav" id="nav">
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#timeline">Timeline</a>
+          <a href="#projects">Projects</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1>Hi, I’m <span class="accent">Ayaan</span>.</h1>
+            <p class="subtitle">Building things for the web — clean, fast, and a little bit futuristic.</p>
+            <div class="cta-row">
+              <a class="btn primary" href="#projects">View Projects</a>
+              <a class="btn ghost" href="#contact">Get in Touch</a>
+            </div>
+          </div>
+          <div class="hero-orb" role="button" aria-label="Activate orb" tabindex="0"></div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section">
+        <div class="container">
+          <h2 class="section-title">About</h2>
+          <p>
+            I’m a developer who enjoys turning ideas into reliable, delightful software. I focus on
+            modern web stacks, thoughtful UX, and performance. Outside of work, I explore new tech,
+            contribute to side projects, and learn by building.
+          </p>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section">
+        <div class="container">
+          <h2 class="section-title">Skills</h2>
+          <ul class="pill-list">
+            <li>HTML5</li>
+            <li>CSS / Tailwind</li>
+            <li>JavaScript (ESNext)</li>
+            <li>TypeScript</li>
+            <li>React</li>
+            <li>Node.js</li>
+            <li>REST / APIs</li>
+            <li>Git & CI</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Timeline -->
+      <section id="timeline" class="section">
+        <div class="container">
+          <h2 class="section-title">Timeline</h2>
+          <div class="timeline">
+            <div class="tl-item reveal">
+              <div class="tl-marker"></div>
+              <div class="tl-card">
+                <div class="tl-date">2025</div>
+                <h3>Freelance Projects</h3>
+                <p>Built and shipped small web apps focusing on fast, accessible UI.</p>
+              </div>
+            </div>
+            <div class="tl-item reveal">
+              <div class="tl-marker"></div>
+              <div class="tl-card">
+                <div class="tl-date">2024</div>
+                <h3>Learning & Building</h3>
+                <p>Dove deep into React + TypeScript and modern tooling.</p>
+              </div>
+            </div>
+            <div class="tl-item reveal">
+              <div class="tl-marker"></div>
+              <div class="tl-card">
+                <div class="tl-date">2023</div>
+                <h3>First Web Releases</h3>
+                <p>Published early projects and started sharing work online.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section">
+        <div class="container">
+          <h2 class="section-title">Projects</h2>
+          <div class="card-grid">
+            <a class="card project-card" href="projects/neon-notes.html" aria-label="View Neon Notes project details">
+              <h3>Neon Notes</h3>
+              <p>A minimal note‑taking PWA with offline sync and keyboard‑first UX.</p>
+            </a>
+            <a class="card project-card" href="projects/grid-gallery.html" aria-label="View Grid Gallery project details">
+              <h3>Grid Gallery</h3>
+              <p>Responsive image gallery with lazy‑loading and color‑aware placeholders.</p>
+            </a>
+            <a class="card project-card" href="projects/api-starter.html" aria-label="View API Starter project details">
+              <h3>API Starter</h3>
+              <p>Template for REST APIs with auth, testing, and CI baked in.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="section">
+        <div class="container">
+          <h2 class="section-title">Contact</h2>
+          <p>Have a question or want to collaborate?</p>
+          <div class="cta-row">
+            <a class="btn primary" href="mailto:ayaanazfar2000@gmail.com">Email</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="btn ghost" href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>© <span id="year"></span> Ayaan • Built with clean HTML/CSS/JS</p>
+        <div class="footer-links">
+          <a href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:ayaanazfar2000@gmail.com">Email</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/main.js"></script>
+  </body>
+  </html>
