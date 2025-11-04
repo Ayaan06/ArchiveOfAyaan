@@ -20,12 +20,21 @@
         </a>
         <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
         <nav class="site-nav" id="nav">
-          <a href="#about">About</a>
+          <a href="#about">About Me</a>
           <a href="#skills">Skills</a>
           <a href="#timeline">Timeline</a>
           <a href="#projects">Projects</a>
           <a href="#contact">Contact</a>
         </nav>
+        <div class="header-actions" aria-label="Quick links">
+          <a class="icon-btn" href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.27 2.3-2.6 4.73-2.6 5.06 0 5.99 3.33 5.99 7.66V24h-5v-7.9c0-1.88-.03-4.3-2.62-4.3-2.63 0-3.03 2.05-3.03 4.17V24h-5V8z" fill="currentColor"/></svg>
+          </a>
+          <a class="icon-btn" href="https://github.com/Ayaan06" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.77-1.35-1.77-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.31 3.52 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.48-1.34-5.48-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .5z" fill="currentColor"/></svg>
+          </a>
+          <a class="btn small resume-btn" href="assets/images/Ayaan Azfar Resume.pdf" target="_blank" rel="noopener" aria-label="Open resume PDF">Resume</a>
+        </div>
       </div>
     </header>
 
@@ -34,26 +43,29 @@
       <section class="hero">
         <div class="container">
           <div class="hero-content">
-            <h1>Hi, I’m <span class="accent">Ayaan</span>.</h1>
-            <p class="subtitle">Building things for the web — clean, fast, and a little bit futuristic.</p>
+            <h1>Hi, I’m <span class="accent">Ayaan Azfar</span>.</h1>
+            <p class="subtitle">Computer Science (Co‑op) student @ University of Guelph • searching for summer 2026 internships in AI, Cloud, iOS and Cybersecurity.</p>
             <div class="cta-row">
               <a class="btn primary" href="#projects">View Projects</a>
               <a class="btn ghost" href="#contact">Get in Touch</a>
             </div>
           </div>
-          <div class="hero-orb" role="button" aria-label="Activate orb" tabindex="0"></div>
+          <figure class="hero-portrait">
+            <img src="assets/images/portrait.jpg" alt="Portrait of Ayaan Azfar" />
+          </figure>
         </div>
       </section>
 
       <!-- About -->
       <section id="about" class="section">
         <div class="container">
-          <h2 class="section-title">About</h2>
-          <p>
-            I’m a developer who enjoys turning ideas into reliable, delightful software. I focus on
-            modern web stacks, thoughtful UX, and performance. Outside of work, I explore new tech,
-            contribute to side projects, and learn by building.
-          </p>
+          <h2 class="section-title">About Me</h2>
+          <p>From building AI models that can identify tumors in medical images to developing blockchain systems that automate trading, I'm passionate about creating technology that doesn't just work, but matters.</p>
+          <p>I am pursuing a Bachelor of Computing (Honours Co-op) in Computer Science with a Project Management minor at the University of Guelph. I have completed multiple certifications including Microsoft Azure (AZ-900, AI-900), AWS Cloud Practitioner, and CompTIA Security+ and mastered tools like Python, C#, C++, Java, Swift, and Power BI. What drives me most is discovering the real-world impact behind these skills.</p>
+          <p>I created an AI-powered tumor detection bot using Azure Machine Learning Studio, PyTorch, and TensorFlow. The model analyzes MRI and CT scans to detect and classify tumors, applying the concepts from my AI-900 certification to demonstrate how artificial intelligence can contribute to healthcare innovation.</p>
+          <p>Alongside that, I engineered SolSync, a blockchain-based trading bot on the Solana network that mirrors trader transactions in real time. By utilizing WebSockets, Web3.py, RPC APIs, and Python, I achieved near-instant execution and a 99% success rate, discovering an entirely new way to trade crypto efficiently and securely.</p>
+          <p>Professionally, I have worked as a Software Engineer Intern with Apple x OurWaveHub, developing and refining an iOS app while learning to collaborate effectively within agile development teams. At the Town of Oakville, I served as an Environmental Impact Analyst, transforming municipal sustainability data into actionable insights.</p>
+          <p>I thrive at the intersection of AI, cloud computing, and software engineering where innovative ideas evolve into systems that truly make a difference. I'm constantly pushing the boundaries of what I can build next and look forward to applying this mindset to new opportunities. Check out my GitHub for more open-source projects I have built.</p>
         </div>
       </section>
 
@@ -62,14 +74,27 @@
         <div class="container">
           <h2 class="section-title">Skills</h2>
           <ul class="pill-list">
-            <li>HTML5</li>
-            <li>CSS / Tailwind</li>
-            <li>JavaScript (ESNext)</li>
-            <li>TypeScript</li>
-            <li>React</li>
-            <li>Node.js</li>
-            <li>REST / APIs</li>
-            <li>Git & CI</li>
+            <li>Swift / SwiftUI</li>
+            <li>Core Data / CloudKit</li>
+            <li>Python</li>
+            <li>TensorFlow / PyTorch</li>
+            <li>SQL</li>
+            <li>JavaScript</li>
+            <li>Java</li>
+            <li>C / C++ / C#</li>
+            <li>R</li>
+            <li>HTML/CSS</li>
+            <li>Azure / AWS</li>
+            <li>Power BI</li>
+            <li>Node.js / React</li>
+            <li>Docker</li>
+            <li>Linux</li>
+            <li>Git / GitHub</li>
+            <li>AZ‑900</li>
+            <li>AI‑900</li>
+            <li>CLF‑C02</li>
+            <li>SC‑900</li>
+            <li>SY0‑701</li>
           </ul>
         </div>
       </section>
@@ -83,24 +108,24 @@
               <div class="tl-marker"></div>
               <div class="tl-card">
                 <div class="tl-date">2025</div>
-                <h3>Freelance Projects</h3>
-                <p>Built and shipped small web apps focusing on fast, accessible UI.</p>
+                <h3>Environmental Impact Analyst — Town of Oakville</h3>
+                <p>Analyzed sustainability metrics across 30+ municipal parks; built Power BI dashboards and ensured compliance tracking. Apr 2024 – Aug 2025.</p>
               </div>
             </div>
             <div class="tl-item reveal">
               <div class="tl-marker"></div>
               <div class="tl-card">
                 <div class="tl-date">2024</div>
-                <h3>Learning & Building</h3>
-                <p>Dove deep into React + TypeScript and modern tooling.</p>
+                <h3>University of Guelph — B.Comp, CS (Co‑op)</h3>
+                <p>Minor in Project Management. Academic Entrance Scholarship, Dean’s List (3.7 GPA), Honour Roll.</p>
               </div>
             </div>
             <div class="tl-item reveal">
               <div class="tl-marker"></div>
               <div class="tl-card">
-                <div class="tl-date">2023</div>
-                <h3>First Web Releases</h3>
-                <p>Published early projects and started sharing work online.</p>
+                <div class="tl-date">2022</div>
+                <h3>Software Engineer (iOS, Cloud, Security) — Apple × OurWaveHub</h3>
+                <p>Built iOS features with Swift/SwiftUI, Core Data, and CloudKit; integrated HealthKit, push notifications; improved UX and stability via TestFlight and crash‑log analysis.</p>
               </div>
             </div>
           </div>
@@ -112,17 +137,17 @@
         <div class="container">
           <h2 class="section-title">Projects</h2>
           <div class="card-grid">
-            <a class="card project-card" href="projects/neon-notes.html" aria-label="View Neon Notes project details">
-              <h3>Neon Notes</h3>
-              <p>A minimal note‑taking PWA with offline sync and keyboard‑first UX.</p>
+            <a class="card project-card" href="projects/ai-tumor-detection.html" aria-label="View AI‑Powered Tumor Detection Bot details">
+              <h3>AI‑Powered Tumor Detection Bot</h3>
+              <p>Image classification on MRI/CT using Azure ML Studio with PyTorch/TensorFlow; improved accuracy via optimized pipelines.</p>
             </a>
-            <a class="card project-card" href="projects/grid-gallery.html" aria-label="View Grid Gallery project details">
-              <h3>Grid Gallery</h3>
-              <p>Responsive image gallery with lazy‑loading and color‑aware placeholders.</p>
+            <a class="card project-card" href="projects/solsync.html" aria-label="View SolSync project details">
+              <h3>SolSync — Solana Trading Bot</h3>
+              <p>Python bot mirroring trader transactions with real‑time tracking and 30% latency reduction; built on Solana Web3/RPC.</p>
             </a>
-            <a class="card project-card" href="projects/api-starter.html" aria-label="View API Starter project details">
-              <h3>API Starter</h3>
-              <p>Template for REST APIs with auth, testing, and CI baked in.</p>
+            <a class="card project-card" href="projects/odyssey-hackathon.html" aria-label="View Odyssey Hackathon Organizer details">
+              <h3>Odyssey Hackathon Organizer</h3>
+              <p>Coordinated a 3‑day event for 350+ participants; logistics, sponsorships, and $15K in prizes.</p>
             </a>
           </div>
         </div>
@@ -134,7 +159,7 @@
           <h2 class="section-title">Contact</h2>
           <p>Have a question or want to collaborate?</p>
           <div class="cta-row">
-            <a class="btn primary" href="mailto:ayaanazfar2000@gmail.com">Email</a>
+            <span class="email-address" title="Copy or use in your email client">ayaanazfar2000@gmail.com</span>
             <a class="btn ghost" href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a>
             <a class="btn ghost" href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a>
           </div>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0f14" />
+    <title>VGA Graphics Card from Scratch — Project</title>
+    <meta name="description" content="Built a discrete-logic VGA graphics card producing pixel-accurate video output." />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container">
+        <a class="logo" href="../index.html#projects"><span>&lt;</span>Ayaan<span>/&gt;</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <nav class="site-nav" id="nav">
+          <a href="../index.html#about">About</a>
+          <a href="../index.html#skills">Skills</a>
+          <a href="../index.html#timeline">Timeline</a>
+          <a href="../index.html#projects">Projects</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">💡 Building a VGA Graphics Card from Scratch</h2>
+          <div class="callout tagline">Sometimes, the best way to understand how computers think is to build one piece of them yourself.</div>
+
+          <!-- Top media: hardware + output -->
+          <div class="hero-media" style="margin-top:16px">
+            <figure>
+              <img src="../assets/images/Graphics card image.jpg" alt="VGA graphics card hardware on breadboards" />
+              <figcaption>Graphics card circuitry built from discrete logic.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/graphics card output.jpg" alt="Monitor showing output from the VGA graphics card" />
+              <figcaption>Rendered output on a VGA monitor.</figcaption>
+            </figure>
+          </div>
+
+          <div class="grid-2" style="margin-top:16px">
+            <div>
+              <h3>Overview</h3>
+              <p>
+                This project was my deep dive into low-level computer architecture, focusing on how graphics signals are generated, timed, and rendered. I built a functional VGA graphics card using logic chips, resistors, and breadboards that produces pixel-accurate video output on a monitor.
+              </p>
+
+              <h3>The Journey</h3>
+              <p>
+                At first, the idea seemed almost impossible. I began by studying VGA signal timing—how horizontal and vertical sync pulses and color signals must align down to the microsecond. Using counters, flip-flops, and oscillators, I generated hsync and vsync. After weeks of troubleshooting clock drift and timing errors, the monitor finally flickered to life, showing a stable pixel grid built entirely from logic circuits.
+              </p>
+            </div>
+            <div>
+              <h3>Challenges Faced</h3>
+              <ul>
+                <li>⚙️ Signal Timing Instability: aligning sync pulses required precise clock calibration and capacitor tuning.</li>
+                <li>🔌 Voltage Level Issues: early tests produced distorted color bands—fixed by balancing resistor networks and stabilizing RGB lines.</li>
+                <li>🧠 Debugging Without Tools: without an oscilloscope, I relied on LEDs and timing charts to visualize signal flow.</li>
+              </ul>
+              <h3>What I Learned</h3>
+              <p>
+                Every pixel on a display starts as an electrical pulse perfectly aligned with thousands of others. Building this from discrete components deepened my understanding of how hardware and software connect at the signal level.
+              </p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:18px">Input and Output</h3>
+          <div class="io-grid">
+            <figure>
+              <span class="io-badge">Input</span>
+              <img src="../assets/images/vga-bus-interface.png" alt="Graphics card input bus and resistor DAC network" />
+              <figcaption>Bus interface and resistor-DAC feeding RGB lines.</figcaption>
+            </figure>
+            <figure>
+              <span class="io-badge">Output</span>
+              <img src="../assets/images/vga.png" alt="Monitor showing VGA output from the card" />
+              <figcaption>Monitor output driven directly from discrete logic.</figcaption>
+            </figure>
+          </div>
+
+          <div class="img-grid" style="margin-top:16px">
+            <figure>
+              <img src="../assets/images/vga.png" alt="Breadboard VGA graphics card output on monitor" />
+              <figcaption>Stable VGA output generated from discrete logic.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/vga-hsync.png" alt="Horizontal sync timing illustration" />
+              <figcaption>Horizontal sync timing built with counters and gates.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/vga-vsync.png" alt="Vertical sync timing illustration" />
+              <figcaption>Vertical sync generation and frame cadence.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/vga-bus-interface.png" alt="Bus interface and DAC network" />
+              <figcaption>Simple resistor DAC + bus interface for RGB.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/6502-vga.png" alt="6502 interfacing concept with VGA timing" />
+              <figcaption>Future idea: 6502-driven pattern ROM + timing.</figcaption>
+            </figure>
+          </div>
+
+          <div class="cta-row" style="margin-top:20px">
+            <a class="btn ghost" href="../index.html#projects">← Back to Projects</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Ac <span id="year"></span> Ayaan — Project: VGA Graphics Card</p>
+        <div class="footer-links"><a href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:ayaanazfar2000@gmail.com">Email</a></div>
+      </div>
+    </footer>
+
+    <script src="../assets/main.js"></script>
+  </body>
+  </html>

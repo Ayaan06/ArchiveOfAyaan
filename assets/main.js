@@ -87,4 +87,48 @@
       if (e.pointerType === 'touch') pulse();
     });
   }
+
+  // Accordions (for SolSync Marketplace section)
+  document.querySelectorAll('[data-accordion] .acc-item').forEach((item) => {
+    const btn = item.querySelector('.acc-button');
+    const panel = item.querySelector('.acc-panel');
+    if (!btn || !panel) return;
+    const close = () => {
+      item.classList.remove('open');
+      btn.setAttribute('aria-expanded', 'false');
+      panel.style.maxHeight = '0px';
+    };
+    const open = () => {
+      item.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      panel.style.maxHeight = panel.scrollHeight + 'px';
+    };
+    // Initialize closed
+    close();
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      // Close siblings for a tidier UX
+      const all = item.parentElement?.querySelectorAll('.acc-item.open');
+      if (all) all.forEach((el) => { if (el !== item) { el.classList.remove('open'); const b = el.querySelector('.acc-button'); const p = el.querySelector('.acc-panel'); if (b) b.setAttribute('aria-expanded', 'false'); if (p) p.style.maxHeight = '0px'; } });
+      if (isOpen) close(); else open();
+    });
+  });
+
+  // Inject VGA project card on homepage if not present
+  (function injectVGA() {
+    const grid = document.querySelector('#projects .card-grid');
+    if (!grid) return;
+    const exists = Array.from(grid.querySelectorAll('a.card.project-card'))
+      .some(a => a.getAttribute('href') === 'projects/vga-graphics-card.html');
+    if (exists) return;
+    const a = document.createElement('a');
+    a.className = 'card project-card';
+    a.href = 'projects/vga-graphics-card.html';
+    a.setAttribute('aria-label', 'View VGA Graphics Card from Scratch details');
+    a.innerHTML = '<h3>VGA Graphics Card from Scratch</h3>' +
+                  '<p>Discrete-logic VGA generator: counters, sync, and a resistor DAC for pixel-accurate video.</p>';
+    // Insert before the last card if present
+    const last = grid.lastElementChild;
+    grid.insertBefore(a, last);
+  })();
 })();

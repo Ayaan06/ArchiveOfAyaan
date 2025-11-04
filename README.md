@@ -30,3 +30,31 @@ A digital portfolio documenting my journey as a developer — from learning foun
   1) Duplicate one of the files in `projects/`
   2) Update title, description, features, and links
   3) Add a Details link in `index.html:1` for the new card
+
+## ⚡ SolSync Marketplace — The Future of Social Crypto Trading
+
+Hook:
+- Re-defining how crypto is traded.
+
+Overview:
+- SolSync began as an automated trading bot on the Solana blockchain, designed to mirror a trader’s transactions in real time. The next phase transforms it into a crypto marketplace where verified traders can publicly share their trades while others can safely invest in them. Users will be able to directly invest into wallets instead of tokens; the wallet’s manager executes trades and the follower mirrors them simultaneously.
+
+Vision:
+- A non-custodial, transparent, and secure platform that lets anyone participate in crypto markets by following proven traders.
+- Leaders earn performance-based rewards; followers gain real-time access to expert strategies — all enforced through smart contracts and on-chain accountability.
+
+Core Features (Planned):
+- 💼 Trader Vaults: Each trader owns a blockchain-secured vault that records and executes every trade transparently.
+- 🤝 Copy & Earn: Followers allocate funds to a trader’s vault; profits are shared automatically via smart-contracted performance fees.
+- 🔒 Cyber-Secure Infrastructure: Multi-layer safeguards, non-custodial wallets, and audited smart contracts ensure every transaction is safe.
+- 📊 Data Transparency: On-chain performance metrics, risk analytics, and trade histories empower users to make informed choices.
+
+Technology Stack:
+- Solana Blockchain • Python • web3.py • Smart Contracts (Anchor) • RPC APIs • Next.js
+
+Goal:
+- Redefine crypto investing by combining social trading, automation, and trust — giving every trader, new or experienced, a fair and transparent marketplace.
+
+Links:
+- 🔗 Project Repository: https://github.com/Ayaan06/SOLSYNC
+- 🌐 Coming Soon: SolSync Marketplace Beta — https://archiveofayaan.com/solsync
