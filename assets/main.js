@@ -132,3 +132,18 @@
     grid.insertBefore(a, last);
   })();
 })();
+  // Inject 6502 project card on homepage if not present
+  (function inject6502() {
+    const grid = document.querySelector('#projects .card-grid');
+    if (!grid) return;
+    const exists = Array.from(grid.querySelectorAll('a.card.project-card'))
+      .some(a => a.getAttribute('href') === 'projects/6502-computer.html');
+    if (exists) return;
+    const a = document.createElement('a');
+    a.className = 'card project-card';
+    a.href = 'projects/6502-computer.html';
+    a.setAttribute('aria-label', 'View 6502 Computer project details');
+    a.innerHTML = '<h3>6502 Computer from Scratch</h3>' +
+                  '<p>Breadboard 6502 with ROM/RAM, VIA + UART, assembly, and serial/LCD I/O.</p>';
+    grid.insertBefore(a, grid.lastElementChild);
+  })();

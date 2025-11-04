@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0f14" />
+    <title>Building a 6502 Computer from Scratch — Project</title>
+    <meta name="description" content="Breadboard computer powered by the 6502 microprocessor with EEPROM/SRAM, VIA, UART and serial/LCD I/O." />
+    <link rel="stylesheet" href="../assets/style.css" />
+  </head>
+  <body>
+    <div class="bg-grid" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="container">
+        <a class="logo" href="../index.html#projects"><span>&lt;</span>Ayaan<span>/&gt;</span></a>
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+        <nav class="site-nav" id="nav">
+          <a href="../index.html#about">About Me</a>
+          <a href="../index.html#skills">Skills</a>
+          <a href="../index.html#timeline">Timeline</a>
+          <a href="../index.html#projects">Projects</a>
+          <a href="../index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <h2 class="section-title">🧠 Building a 6502 Computer from Scratch</h2>
+          <div class="callout tagline">To truly understand how computers think, I decided to build one from the ground up.</div>
+
+          <div class="hero-media" style="margin-top:16px">
+            <figure>
+              <img src="../assets/images/6502_1.jpg" alt="6502 computer close-up on breadboards" />
+              <figcaption>Hardware build: CPU, ROM/RAM, clock, and wiring.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/6502_customClockForDebugging.jpg" alt="Custom adjustable clock used for debugging the 6502" />
+              <figcaption>Custom debug clock used to step through cycles.</figcaption>
+            </figure>
+          </div>
+
+          <div class="grid-2" style="margin-top:16px">
+            <div>
+              <h3>Overview</h3>
+              <p>
+                This project was my hands-on exploration of computer architecture and low-level programming, where I built a fully functional computer powered by the MOS Technology 6502 microprocessor. I designed, wired, and programmed a breadboard-based computer capable of running real code and producing output on an LCD display.
+              </p>
+
+              <h3>The Journey</h3>
+              <p>
+                I assembled the CPU, clock, and memory (EEPROM/SRAM) with a 1&nbsp;MHz crystal. After verifying fetch/execute with machine-code loops, I wrote 6502 assembly to drive LEDs and a character LCD. I expanded I/O using a VIA for GPIO and a 6551 UART for RS-232, enabling me to interact from a PC terminal and load programs like WozMon and Microsoft BASIC.
+              </p>
+            </div>
+            <div>
+              <h3>Challenges Faced</h3>
+              <ul>
+                <li>⚙️ Bus timing and signal conflicts: clock tuning to keep CPU, ROM/RAM, and peripherals in sync.</li>
+                <li>🔌 Wiring and noise issues: hundreds of jumpers meant cross‑talk and intermittent faults.</li>
+                <li>💾 Programming the EEPROM: assembly toolchain and mapping binaries into ROM precisely.</li>
+                <li>🧠 Understanding assembly language: managing stack/registers and addressing modes deliberately.</li>
+              </ul>
+              <h3>What I Learned</h3>
+              <p>
+                How the instruction cycle works, how memory and I/O interact over buses and interrupts, and how to debug circuits with datasheets and logical tracing. Creation drove understanding: seeing “Hello, World” appear made every wire worth it.
+              </p>
+            </div>
+          </div>
+
+          <h3 style="margin-top:18px">Gallery</h3>
+          <div class="img-grid">
+            <figure>
+              <img src="../assets/images/6502.png" alt="Breadboard overview of the 6502 computer" />
+              <figcaption>Overview: CPU, clock, EEPROM, SRAM, and VIA.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/6502-serial.png" alt="Serial terminal connected to 6502 via 6551 UART" />
+              <figcaption>Serial I/O with 6551 UART and RS‑232.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/6502-vga.png" alt="Concept integrating 6502 with custom VGA card" />
+              <figcaption>Next: integrate with custom VGA card for video out.</figcaption>
+            </figure>
+          </div>
+
+          <div class="callout" style="margin-top:18px">
+            <strong>Next Steps:</strong> integrate my custom VGA graphics card so the 6502 can render visuals on a monitor — combining both projects into a single, self‑contained computer for interactive programs and games.
+          </div>
+
+          <h3 style="margin-top:18px">Detailed Schematics</h3>
+          <div class="hero-media" style="margin-top:10px">
+            <figure>
+              <img src="../assets/images/6502.png" alt="Breadboard 6502 computer schematic overview" />
+              <figcaption>Breadboard 6502 computer: CPU, clock, ROM/RAM, and I/O.</figcaption>
+            </figure>
+            <figure>
+              <img src="../assets/images/6502-serial.png" alt="6502 UART and serial interface schematic" />
+              <figcaption>Serial I/O via 6551 UART talking to a terminal.</figcaption>
+            </figure>
+          </div>
+
+          <div class="cta-row" style="margin-top:20px">
+            <a class="btn ghost" href="../index.html#projects">← Back to Projects</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>Ac <span id="year"></span> Ayaan — Project: 6502 Computer</p>
+        <div class="footer-links"><a href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:ayaanazfar2000@gmail.com">Email</a></div>
+      </div>
+    </footer>
+
+    <script src="../assets/main.js"></script>
+  </body>
+  </html>
