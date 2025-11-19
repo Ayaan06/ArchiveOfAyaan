@@ -1,201 +1,493 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0b0f14" />
-    <title>Ayaan — Portfolio</title>
-    <meta name="description" content="Ayaan's portfolio: projects, timeline, and skills." />
-
-    <!-- Styles -->
-    <link rel="preload" href="assets/style.css" as="style" />
-    <link rel="stylesheet" href="assets/style.css" />
+    <title>Ayaan Azfar - Computer Science Portfolio</title>
+    <meta
+      name="description"
+      content="Modern portfolio for Ayaan Azfar showcasing projects, certifications, experience, and contact information."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="bg-grid" aria-hidden="true"></div>
-    <header class="site-header">
-      <div class="container">
-        <a class="logo" href="#home" aria-label="Ayaan home">
-          <span>&lt;</span>Ayaan<span>/&gt;</span>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header" role="banner">
+      <div class="brand">
+        <a href="#home" class="logo" aria-label="Navigate to home">
+          <span class="code">&lt;/&gt;</span>Ayaan.dev
         </a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-        <nav class="site-nav" id="nav">
-          <a href="#about">About Me</a>
-          <a href="#skills">Skills</a>
-          <a href="#timeline">Timeline</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
-        <div class="header-actions" aria-label="Quick links">
-          <a class="icon-btn" href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener" aria-label="LinkedIn">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM0 8h5v16H0V8zm7.5 0h4.8v2.2h.07c.67-1.27 2.3-2.6 4.73-2.6 5.06 0 5.99 3.33 5.99 7.66V24h-5v-7.9c0-1.88-.03-4.3-2.62-4.3-2.63 0-3.03 2.05-3.03 4.17V24h-5V8z" fill="currentColor"/></svg>
-          </a>
-          <a class="icon-btn" href="https://github.com/Ayaan06" target="_blank" rel="noopener" aria-label="GitHub">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.4c.6.11.82-.26.82-.58v-2.02c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.35-1.77-1.35-1.77-1.1-.75.08-.74.08-.74 1.22.09 1.86 1.25 1.86 1.25 1.08 1.85 2.83 1.31 3.52 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.48-1.34-5.48-5.95 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.17 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.65.24 2.87.12 3.17.77.84 1.24 1.91 1.24 3.22 0 4.62-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .5z" fill="currentColor"/></svg>
-          </a>
-          <a class="btn small resume-btn" href="assets/images/Ayaan Azfar Resume.pdf" target="_blank" rel="noopener" aria-label="Open resume PDF">Resume</a>
-        </div>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-controls">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="theme-text">Dark</span>
+        </button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
 
-    <main id="home">
+    <main class="page">
       <!-- Hero -->
-      <section class="hero">
-        <div class="container">
-          <div class="hero-content">
-            <h1>Hi, I’m <span class="accent">Ayaan Azfar</span>.</h1>
-            <p class="subtitle">Computer Science (Co‑op) student @ University of Guelph • searching for summer 2026 internships in AI, Cloud, iOS and Cybersecurity.</p>
+      <section class="snap-section hero" id="home" aria-label="Intro">
+        <div class="hero-grid">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">Computer Science (Co-op) Student</p>
+            <h1>Ayaan Azfar</h1>
+            <p class="tagline">
+              University of Guelph student searching for Summer 2026 internships focused on AI, cloud, iOS, and cybersecurity.
+            </p>
+            <p class="hero-bio">
+              From building AI models that flag tumors in medical scans to engineering blockchain trading automations, I care about
+              software that makes a measurable impact.
+            </p>
+            <ul class="hero-highlights">
+              <li>Azure ML Studio, PyTorch, TensorFlow, Web3.py, SwiftUI, Power BI</li>
+              <li>Certifications: AZ-900, AI-900, AWS CLF-C02, SC-900, CompTIA Security+</li>
+              <li>Experience with Apple x OurWaveHub, Town of Oakville, and University of Guelph research teams</li>
+            </ul>
             <div class="cta-row">
-              <a class="btn primary" href="#projects">View Projects</a>
-              <a class="btn ghost" href="#contact">Get in Touch</a>
+              <a href="#projects" class="btn primary">View Projects</a>
+              <a href="#contact" class="btn ghost">Contact Me</a>
             </div>
           </div>
-          <figure class="hero-portrait">
-            <img src="assets/images/portrait.jpg" alt="Portrait of Ayaan Azfar" />
+          <figure class="hero-visual reveal" aria-label="Profile placeholder">
+            <div class="hero-frame">
+              <img src="assets/images/portrait.jpg" alt="Portrait of Ayaan Azfar" />
+            </div>
           </figure>
         </div>
       </section>
 
-      <!-- About -->
-      <section id="about" class="section">
-        <div class="container">
-          <h2 class="section-title">About Me</h2>
-          <p>From building AI models that can identify tumors in medical images to developing blockchain systems that automate trading, I'm passionate about creating technology that doesn't just work, but matters.</p>
-          <p>I am pursuing a Bachelor of Computing (Honours Co-op) in Computer Science with a Project Management minor at the University of Guelph. I have completed multiple certifications including Microsoft Azure (AZ-900, AI-900), AWS Cloud Practitioner, and CompTIA Security+ and mastered tools like Python, C#, C++, Java, Swift, and Power BI. What drives me most is discovering the real-world impact behind these skills.</p>
-          <p>I created an AI-powered tumor detection bot using Azure Machine Learning Studio, PyTorch, and TensorFlow. The model analyzes MRI and CT scans to detect and classify tumors, applying the concepts from my AI-900 certification to demonstrate how artificial intelligence can contribute to healthcare innovation.</p>
-          <p>Alongside that, I engineered SolSync, a blockchain-based trading bot on the Solana network that mirrors trader transactions in real time. By utilizing WebSockets, Web3.py, RPC APIs, and Python, I achieved near-instant execution and a 99% success rate, discovering an entirely new way to trade crypto efficiently and securely.</p>
-          <p>Professionally, I have worked as a Software Engineer Intern with Apple x OurWaveHub, developing and refining an iOS app while learning to collaborate effectively within agile development teams. At the Town of Oakville, I served as an Environmental Impact Analyst, transforming municipal sustainability data into actionable insights.</p>
-          <p>I thrive at the intersection of AI, cloud computing, and software engineering where innovative ideas evolve into systems that truly make a difference. I'm constantly pushing the boundaries of what I can build next and look forward to applying this mindset to new opportunities. Check out my GitHub for more open-source projects I have built.</p>
+      <!-- Projects (one per screen) -->
+      <section class="snap-section project-panel project-mlpicks reveal" id="projects">
+        <div class="project-copy">
+          <p class="eyebrow">Project 01</p>
+          <h2>MLPicks &mdash; NBA Prop Intelligence</h2>
+          <p>
+            End-to-end NBA over/under prediction engine with a FastAPI backend, scikit-learn models, React/Vite dashboard, and a
+            backtesting suite that validates confidence buckets against historical lines.
+          </p>
+          <ul>
+            <li>StatsProvider + CSV cache reuse free NBA API calls while feature engineering tracks pace, rest, usage, and opponent form.</li>
+            <li>Dedicated training scripts for points/rebounds/assists run chronological splits, train Gradient Boosting models, and persist sigma + feature importances.</li>
+            <li>Frontend surfaces edge/risk, confidence bars, and integrates CI smoke tests alongside a replay-focused backtesting package.</li>
+          </ul>
+          <div class="project-meta">
+            <span>FastAPI</span>
+            <span>scikit-learn</span>
+            <span>React + Vite</span>
+            <span>Pytest</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Ayaan06/MLPicks" class="btn primary" target="_blank" rel="noopener">View Repo</a>
+            <a href="https://github.com/Ayaan06/MLPicks#readme" class="btn outline" target="_blank" rel="noopener">Architecture Notes</a>
+          </div>
+        </div>
+        <figure class="project-media">
+          <video
+            src="assets/videos/NBA%20Betting%20Projections%20-%20Screencastify%20-%20November%2018%2C%202025%2010_20%20PM.webm"
+            controls
+            playsinline
+            poster="assets/images/project-neon.svg"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </section>
+
+      <section class="snap-section project-panel project-solsync reveal">
+        <div class="project-copy">
+          <p class="eyebrow">Project 02</p>
+          <h2>SolSync &mdash; Solana Copy Trading</h2>
+          <p>
+            Local copy-trading engine that watches a &ldquo;master&rdquo; wallet, interprets balance deltas as buy/sell signals,
+            and mirrors trades with Pump.fun/Raydium APIs while keeping signing local for security.
+          </p>
+          <ul>
+            <li>finalDraftV3.py orchestrates WebSocket subscriptions, RPC retries, and solders-based signature flows for each mirrored position.</li>
+            <li>Flask control server serves a local-only dashboard to start/stop bots, tune wallets/slippage/priority fees, and stream logs in real time.</li>
+            <li>Shared config surface exists as both CLI flags and web form fields, centralizing every knob from pool selection to RPC fallbacks.</li>
+          </ul>
+          <div class="project-meta">
+            <span>Python</span>
+            <span>Flask</span>
+            <span>WebSockets</span>
+            <span>Solana RPC</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Ayaan06/SOLSYNC" class="btn primary" target="_blank" rel="noopener">View Repo</a>
+            <a href="https://github.com/Ayaan06/SOLSYNC#readme" class="btn outline" target="_blank" rel="noopener">Build Notes</a>
+          </div>
+        </div>
+        <figure class="project-media">
+          <video
+            src="assets/videos/SolSync%20-%20Screencastify%20-%20November%2018%2C%202025%2010_50%20PM.webm"
+            controls
+            playsinline
+            poster="assets/images/project-solsync.svg"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </section>
+
+      <section class="snap-section project-panel project-ai reveal">
+        <div class="project-copy">
+          <p class="eyebrow">Project 03</p>
+          <h2>TumorAI &mdash; Brain Tumor Classifier</h2>
+          <p>
+            Educational ResNet-18 fine-tune over a Kaggle MRI dataset that serves predictions via Gradio with loud
+            &ldquo;not for medical use&rdquo; framing.
+          </p>
+          <ul>
+            <li>Training script wires ImageFolder datasets, augmentation, validation tracking, and checkpoints weights + class metadata.</li>
+            <li>Gradio app mirrors training transforms to keep inference honest, returning probability distributions with markdown context.</li>
+            <li>Notes highlight dataset pitfalls (class mappings, augmentation balance, GPU/CPU switching) to help future contributors.</li>
+          </ul>
+          <div class="project-meta">
+            <span>PyTorch</span>
+            <span>Gradio</span>
+            <span>Python</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Ayaan06/TumorAI" class="btn primary" target="_blank" rel="noopener">View Repo</a>
+            <a href="https://github.com/Ayaan06/TumorAI#readme" class="btn outline" target="_blank" rel="noopener">Model Notes</a>
+          </div>
+        </div>
+        <figure class="project-media">
+          <video
+            src="assets/videos/Brain%20Tumor%20Type%20Detection%20(Not%20for%20Medical%20Use)%20-%20Screencastify%20-%20November%2018%2C%202025%2010_35%20PM.webm"
+            controls
+            playsinline
+            poster="assets/images/project-ai.svg"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </section>
+
+      <section class="snap-section project-panel project-hardware reveal">
+        <div class="project-copy hardware-intro">
+          <p class="eyebrow">Project 04</p>
+          <h2>Building Hardware From Scratch</h2>
+        </div>
+        <div class="hardware-grid">
+          <article class="hardware-card">
+            <figure class="hardware-media">
+              <img src="assets/images/6502_1.jpg" alt="Breadboard 6502 computer build" />
+            </figure>
+            <div class="hardware-copy">
+              <p class="eyebrow">6502 Computer</p>
+              <h3>Scratch-built MOS 6502 Computer</h3>
+              <p>
+                Breadboarded CPU with ROM, RAM, VIA, and UART peripherals driving LEDs, LCDs, and serial consoles at 1&nbsp;MHz.
+              </p>
+              <ul>
+                <li>Custom clock + single-step circuit let me probe every address/data line for debugging.</li>
+                <li>Python assembler flashes binaries straight into EEPROM to iterate quickly.</li>
+                <li>Ran WozMon/BASIC monitors plus my own diagnostics firmware.</li>
+              </ul>
+              <div class="project-actions">
+                <a href="projects/6502-computer.html" class="btn primary" target="_blank" rel="noopener">View Build</a>
+              </div>
+            </div>
+          </article>
+          <article class="hardware-card">
+            <figure class="hardware-media">
+              <img src="assets/images/Graphics card image.jpg" alt="Custom VGA graphics card" />
+            </figure>
+            <div class="hardware-copy">
+              <p class="eyebrow">VGA Graphics Card</p>
+              <h3>Discrete VGA Renderer</h3>
+              <p>
+                Companion graphics card that generates 640&times;480 VGA signals, sprites, and diagnostics so the 6502 can paint
+                animations directly to a monitor.
+              </p>
+              <ul>
+                <li>Implements its own pixel clock, HSYNC/VSYNC generators, and tile memory on perfboard.</li>
+                <li>SPI-like bus lets the 6502 stream sprite coordinates and palettes in real time.</li>
+                <li>Debug overlay renders register states directly to a monitor for live introspection.</li>
+                <li>Sprite sheet + palette EEPROMs are hot-swappable for rapid iteration.</li>
+              </ul>
+              <div class="project-actions">
+                <a href="projects/vga-graphics-card.html" class="btn primary" target="_blank" rel="noopener"
+                  >View Build</a
+                >
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
-      <!-- Skills -->
-            <section id="skills" class="section">
-        <div class="container">
-          <h2 class="section-title">Technical Skills</h2>
-          <div class="skills-grid">
+      <section class="snap-section compact more-projects-slider reveal" id="more-projects" aria-label="More projects carousel">
+        <div class="slider-shell" data-slider>
+          <div class="slider-head">
             <div>
-              <h3>Programming Languages</h3>
-              <ul class="pill-list">
-                <li>Python</li>
-                <li>JavaScript</li>
-                <li>Java</li>
-                <li>C / C++ / C#</li>
-                <li>Swift</li>
-                <li>R</li>
-                <li>SQL</li>
-                <li>HTML/CSS</li>
-              </ul>
+              <p class="eyebrow">Swipe Archive</p>
+              <h2>More Projects</h2>
             </div>
-            <div>
-              <h3>Tools & Frameworks</h3>
-              <ul class="pill-list">
-                <li>SwiftUI</li>
-                <li>Core Data / CloudKit</li>
-                <li>TensorFlow / PyTorch</li>
-                <li>Node.js / React</li>
-                <li>Azure</li>
-                <li>AWS</li>
-                <li>Docker</li>
-                <li>Linux</li>
-                <li>Git / GitHub</li>
-                <li>Power BI</li>
-              </ul>
+            <div class="slider-controls">
+              <button type="button" data-slider-prev aria-label="Scroll previous">&#8592;</button>
+              <button type="button" data-slider-next aria-label="Scroll next">&#8594;</button>
             </div>
-            <div>
-              <h3>Certifications</h3>
-              <ul class="pill-list">
-                <li>Microsoft Azure Fundamentals (AZ-900)</li>
-                <li>Microsoft Azure AI Fundamentals (AI-900)</li>
-                <li>AWS Certified Cloud Practitioner (CLF-C02)</li>
-                <li>Microsoft Security, Compliance & Identity Fundamentals (SC-900)</li>
-                <li>CompTIA Security+ (SY0-701)</li>
+          </div>
+          <div class="slider-track" data-slider-track tabindex="0">
+            <article class="more-project-card">
+              <div>
+                <p class="eyebrow">Full Stack</p>
+                <h3>loginPage</h3>
+                <p>PHP/MySQL auth demo with registration, role-based dashboards, and hardened session handling.</p>
+              </div>
+              <ul>
+                <li>Separates config, handlers, and role-specific pages to keep logic tidy.</li>
+                <li>Highlights secure password storage, validation, and admin-gatekeeping basics.</li>
+                <li>Great refresher on PHP error handling and UX for multi-role flows.</li>
               </ul>
-            </div>
+              <div class="card-tags">
+                <span>PHP</span>
+                <span>MySQL</span>
+              </div>
+              <div class="card-action">
+                <a class="btn ghost" href="https://github.com/Ayaan06/loginPage" target="_blank" rel="noopener">View Repo</a>
+              </div>
+            </article>
+
+            <article class="more-project-card">
+              <div>
+                <p class="eyebrow">iOS Prototype</p>
+                <h3>GetHealthy</h3>
+                <p>Swift-based wellness prototype built for OurWaveHub x Apple with smooth onboarding + habit loops.</p>
+              </div>
+              <ul>
+                <li>Xcode project explores SwiftUI layouts, navigation stacks, and local storage for progress.</li>
+                <li>Shows range beyond web/ML with native UI polish.</li>
+                <li>Next step: tie in charts, HealthKit, and TestFlight feedback cycles.</li>
+              </ul>
+              <div class="card-tags">
+                <span>Swift</span>
+                <span>iOS</span>
+              </div>
+              <div class="card-action">
+                <a class="btn ghost" href="https://github.com/Ayaan06/GetHealthy" target="_blank" rel="noopener">View Repo</a>
+              </div>
+            </article>
+
+            <article class="more-project-card">
+              <div>
+                <p class="eyebrow">Data Utility</p>
+                <h3>txtExtractor</h3>
+                <p>CLI that parses .txt/.md job lists and scrapes Eluta.ca into structured CSV/TSV/MD outputs.</p>
+              </div>
+              <ul>
+                <li>Keyword-driven parser strips Markdown artifacts and normalizes into Company/Role/Location/Link rows.</li>
+                <li>Eluta scraper layer supports filters, dead-link checks, and multiple output formats.</li>
+                <li>Lesson: treat text parsing like data engineering with explicit schemas.</li>
+              </ul>
+              <div class="card-tags">
+                <span>Python</span>
+                <span>CLI</span>
+              </div>
+              <div class="card-action">
+                <a class="btn ghost" href="https://github.com/Ayaan06/txtExtractor" target="_blank" rel="noopener">View Repo</a>
+              </div>
+            </article>
+
+            <article class="more-project-card">
+              <div>
+                <p class="eyebrow">Automation</p>
+                <h3>GitScraper</h3>
+                <p>GitHub Markdown scraper that extracts job-style rows from remote repos with anchor + keyword filters.</p>
+              </div>
+              <ul>
+                <li>Raw-content fetcher handles tables/lists and converts them into normalized job objects.</li>
+                <li>Keyword logic expands shorthand like &ldquo;Canada&rdquo; into city variants, plus verbose logging.</li>
+                <li>Pytest suite guards parsing heuristics while CLI flags keep the UX ergonomic.</li>
+              </ul>
+              <div class="card-tags">
+                <span>Python</span>
+                <span>GitHub API</span>
+              </div>
+              <div class="card-action">
+                <a class="btn ghost" href="https://github.com/Ayaan06/GitScraper" target="_blank" rel="noopener">View Repo</a>
+              </div>
+            </article>
+
+            <article class="more-project-card">
+              <div>
+                <p class="eyebrow">Portfolio</p>
+                <h3>ArchiveOfAyaan</h3>
+                <p>Static site system with a dark timeline aesthetic, detail pages, and scroll-triggered reveals.</p>
+              </div>
+              <ul>
+                <li>Shared CSS/JS keep nav, scroll snapping, and theme toggles consistent across sections.</li>
+                <li>Dedicated project templates make it painless to spin up new write-ups.</li>
+                <li>README doubles as the SolSync Marketplace vision doc outlining future Solana products.</li>
+              </ul>
+              <div class="card-tags">
+                <span>HTML/CSS</span>
+                <span>Vanilla JS</span>
+              </div>
+              <div class="card-action">
+                <a class="btn ghost" href="https://github.com/Ayaan06/ArchiveOfAyaan" target="_blank" rel="noopener">View Repo</a>
+              </div>
+            </article>
+
+            <article class="more-project-card">
+              <div>
+                <p class="eyebrow">Extensions</p>
+                <h3>Stock-Timer</h3>
+                <p>Chrome extension that watches tickers, polls APIs, and fires notifications when thresholds hit.</p>
+              </div>
+              <ul>
+                <li>Manifest + popup UI pair with a background script that tracks price deltas and alert rules.</li>
+                <li>Branding package ships icons/screenshots for the Chrome Web Store listing.</li>
+                <li>Great playground for CSP nuances, notification permissions, and polling vs. rate limits.</li>
+              </ul>
+              <div class="card-tags">
+                <span>JavaScript</span>
+                <span>Chrome API</span>
+              </div>
+              <div class="card-action">
+                <a class="btn ghost" href="https://github.com/Ayaan06/Stock-Timer-Extension" target="_blank" rel="noopener"
+                  >View Repo</a
+                >
+              </div>
+            </article>
+
+            <article class="more-project-card">
+              <div>
+                <p class="eyebrow">API Sandbox</p>
+                <h3>FMP API Example</h3>
+                <p>Mini Chrome extension/demo showcasing Financial Modeling Prep API calls and popup rendering.</p>
+              </div>
+              <ul>
+                <li>Validates auth/rate-limit patterns that later powered the stock alert extension.</li>
+                <li>Lightweight popup demonstrates surfacing fundamentals/news data quickly.</li>
+                <li>Proof that small POCs de-risk larger products.</li>
+              </ul>
+              <div class="card-tags">
+                <span>JavaScript</span>
+                <span>FMP API</span>
+              </div>
+              <div class="card-action">
+                <a class="btn ghost" href="https://github.com/Ayaan06/FmpAPI-EXample" target="_blank" rel="noopener">View Repo</a>
+              </div>
+            </article>
+
           </div>
         </div>
       </section>
 
-      <!-- Timeline -->
-      <section id="timeline" class="section">
-        <div class="container">
-          <h2 class="section-title">Timeline</h2>
-          <div class="timeline">
-            <div class="tl-item reveal">
-              <div class="tl-marker"></div>
-              <div class="tl-card">
-                <div class="tl-date">2025</div>
-                <h3>Environmental Impact Analyst — Town of Oakville</h3>
-                <p>Analyzed sustainability metrics across 30+ municipal parks; built Power BI dashboards and ensured compliance tracking. Apr 2024 – Aug 2025.</p>
-              </div>
-            </div>
-            <div class="tl-item reveal">
-              <div class="tl-marker"></div>
-              <div class="tl-card">
-                <div class="tl-date">2024</div>
-                <h3>University of Guelph — B.Comp, CS (Co‑op)</h3>
-                <p>Minor in Project Management. Academic Entrance Scholarship, Dean’s List (3.7 GPA), Honour Roll.</p>
-              </div>
-            </div>
-            <div class="tl-item reveal">
-              <div class="tl-marker"></div>
-              <div class="tl-card">
-                <div class="tl-date">2022</div>
-                <h3>Software Engineer (iOS, Cloud, Security) — Apple × OurWaveHub</h3>
-                <p>Built iOS features with Swift/SwiftUI, Core Data, and CloudKit; integrated HealthKit, push notifications; improved UX and stability via TestFlight and crash‑log analysis.</p>
-              </div>
-            </div>
-          </div>
+      <!-- Certifications -->
+      <section class="snap-section certifications reveal" id="certifications">
+        <div class="section-header">
+          <p class="eyebrow">Validation</p>
+          <h2>Certifications</h2>
+        </div>
+        <div class="cert-grid">
+          <article class="cert-card">
+            <img class="cert-badge" src="assets/images/cert-az900.svg" alt="Microsoft Azure Fundamentals badge" />
+            <h3>Microsoft Azure Fundamentals</h3>
+            <p>Exam AZ-900 - Cloud Foundations</p>
+            <a class="btn outline" href="assets/Certifications/AZ-900.pdf" target="_blank" rel="noopener"
+              >View Certification</a
+            >
+          </article>
+          <article class="cert-card">
+            <img class="cert-badge" src="assets/images/cert-ai900.svg" alt="Microsoft Azure AI Fundamentals badge" />
+            <h3>Microsoft Azure AI Fundamentals</h3>
+            <p>Exam AI-900 - Responsible AI</p>
+            <a class="btn outline" href="assets/Certifications/AI-900.pdf" target="_blank" rel="noopener"
+              >View Certification</a
+            >
+          </article>
+          <article class="cert-card">
+            <img class="cert-badge" src="assets/images/cert-aws-clf.svg" alt="AWS Certified Cloud Practitioner badge" />
+            <h3>AWS Certified Cloud Practitioner</h3>
+            <p>Exam CLF-C02 - AWS Architecture</p>
+          </article>
+          <article class="cert-card">
+            <img class="cert-badge" src="assets/images/cert-sc900.svg" alt="Microsoft Security Compliance and Identity badge" />
+            <h3>Microsoft Security, Compliance & Identity Fundamentals</h3>
+            <p>Exam SC-900 - Cloud Security</p>
+          </article>
+          <article class="cert-card">
+            <img class="cert-badge" src="assets/images/cert-securityplus.svg" alt="CompTIA Security Plus badge" />
+            <h3>CompTIA Security+</h3>
+            <p>Exam SY0-701 - Cybersecurity</p>
+          </article>
         </div>
       </section>
 
-      <!-- Projects -->
-      <section id="projects" class="section">
-        <div class="container">
-          <h2 class="section-title">Projects</h2>
-          <div class="card-grid">
-            <a class="card project-card" href="projects/ai-tumor-detection.html" aria-label="View AI‑Powered Tumor Detection Bot details">
-              <h3>AI‑Powered Tumor Detection Bot</h3>
-              <p>Image classification on MRI/CT using Azure ML Studio with PyTorch/TensorFlow; improved accuracy via optimized pipelines.</p>
-            </a>
-            <a class="card project-card" href="projects/solsync.html" aria-label="View SolSync project details">
-              <h3>SolSync — Solana Trading Bot</h3>
-              <p>Python bot mirroring trader transactions with real‑time tracking and 30% latency reduction; built on Solana Web3/RPC.</p>
-            </a>
-            <a class="card project-card" href="projects/odyssey-hackathon.html" aria-label="View Odyssey Hackathon Organizer details">
-              <h3>Odyssey Hackathon Organizer</h3>
-              <p>Coordinated a 3‑day event for 350+ participants; logistics, sponsorships, and $15K in prizes.</p>
-            </a>
-          </div>
+      <!-- Experience -->
+      <section class="snap-section experience reveal" id="experience">
+        <div class="section-header">
+          <p class="eyebrow">Impact</p>
+          <h2>Experience</h2>
+        </div>
+        <div class="timeline" aria-label="Experience timeline">
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-date">2024 - 2025</div>
+              <h3>Environmental Impact Analyst - Town of Oakville</h3>
+              <p>Analyzed sustainability metrics across 30+ municipal parks, built Power BI dashboards, and kept compliance reporting on track.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-date">2024</div>
+              <h3>University of Guelph - B.Comp, CS (Co-op)</h3>
+              <p>Project Management minor, Academic Entrance Scholarship, Dean's List (3.7 GPA), Honour Roll.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-date">2022</div>
+              <h3>Software Engineer (iOS, Cloud, Security) - Apple x OurWaveHub</h3>
+              <p>Built Swift/SwiftUI features, integrated HealthKit and push notifications, and improved UX with TestFlight feedback loops.</p>
+            </div>
+          </article>
         </div>
       </section>
 
       <!-- Contact -->
-      <section id="contact" class="section">
-        <div class="container">
-          <h2 class="section-title">Contact</h2>
-          <p>Have a question or want to collaborate?</p>
-          <div class="cta-row">
-            <span class="email-address" title="Copy or use in your email client">ayaanazfar2000@gmail.com</span>
-            <a class="btn ghost" href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a>
-            <a class="btn ghost" href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a>
-          </div>
+      <section class="snap-section contact" id="contact">
+        <div class="section-header">
+          <p class="eyebrow">Get in Touch</p>
+          <h2>Let's build something meaningful</h2>
+          <p>Available for internships, freelance projects, and collaborations.</p>
         </div>
+        <div class="contact-actions">
+          <a class="btn primary" href="mailto:ayaanazfar2000@gmail.com">Email Me</a>
+          <a class="btn ghost" href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn outline" href="assets/images/Ayaan Azfar Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+        </div>
+        <p class="footer-note">&copy; <span id="year">2025</span> Ayaan Azfar - Crafted with intent.</p>
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container">
-        <p>© <span id="year"></span> Ayaan • Built with clean HTML/CSS/JS</p>
-        <div class="footer-links">
-          <a href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a>
-          <a href="mailto:ayaanazfar2000@gmail.com">Email</a>
-        </div>
-      </div>
-    </footer>
-
-    <script src="assets/main.js"></script>
+    <script src="script.js" defer></script>
   </body>
-  </html>
-
+</html>

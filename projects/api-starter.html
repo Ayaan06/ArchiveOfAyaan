@@ -1,75 +1,148 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0b0f14" />
-    <title>API Starter — Project</title>
-    <meta name="description" content="Details about API Starter template project." />
-    <link rel="stylesheet" href="../assets/style.css" />
+    <title>API Starter - Project Detail</title>
+    <meta name="description" content="Production-ready REST API starter with auth, testing, and CI baked in." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
-    <div class="bg-grid" aria-hidden="true"></div>
-    <header class="site-header">
-      <div class="container">
-        <a class="logo" href="../index.html#projects"><span>&lt;</span>Ayaan<span>/&gt;</span></a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-        <nav class="site-nav" id="nav">
-          <a href="../index.html#about">About</a>
-          <a href="../index.html#skills">Skills</a>
-          <a href="../index.html#timeline">Timeline</a>
-          <a href="../index.html#projects">Projects</a>
-          <a href="../index.html#contact">Contact</a>
-        </nav>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header" role="banner">
+      <div class="brand">
+        <a href="../index.html#home" class="logo" aria-label="Navigate to home">
+          <span class="code">&lt;/&gt;</span>Ayaan.dev
+        </a>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../index.html#certifications" class="nav-link">Certifications</a>
+        <a href="../index.html#experience" class="nav-link">Experience</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-controls">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="theme-text">Dark</span>
+        </button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
 
-    <main>
-      <section class="project-hero section">
-        <div class="container">
-          <a class="btn ghost" href="../index.html#projects">← Back to Projects</a>
+    <main class="detail-page">
+      <section class="snap-section detail-hero software reveal">
+        <div class="detail-hero__content">
+          <p class="eyebrow">Backend - Pattern Library</p>
           <h1>API Starter</h1>
-          <p class="subtitle">Template for REST APIs with auth, testing, and CI baked in.</p>
-          <div class="cta-row">
-            <a class="btn primary" href="#">Docs</a>
-            <a class="btn" href="#">Source Code</a>
-          </div>
-          <ul class="pill-list" style="margin-top:14px">
-            <li>Node.js</li><li>TypeScript</li><li>Jest</li><li>GitHub Actions</li>
-          </ul>
-        </div>
-      </section>
-
-      <section class="section">
-        <div class="container">
-          <h2 class="section-title">Overview</h2>
-          <p>
-            API Starter provides a clean foundation for RESTful services with preconfigured
-            testing, environment management, CI, and authentication patterns.
+          <p class="tagline">
+            Opinionated Node.js/TypeScript boilerplate with JWT auth, validation middleware, integration tests, and GitHub
+            Actions CI so new APIs can ship in hours, not days.
           </p>
+          <ul class="detail-tags">
+            <li>Node.js</li>
+            <li>TypeScript</li>
+            <li>Prisma</li>
+            <li>Jest</li>
+          </ul>
+          <div class="detail-metrics">
+            <div class="metric">
+              <span>Coverage</span>
+              <strong>92%</strong>
+            </div>
+            <div class="metric">
+              <span>Latency</span>
+              <strong>&lt; 40ms</strong>
+            </div>
+            <div class="metric">
+              <span>Deploys</span>
+              <strong>1-click</strong>
+            </div>
+          </div>
+          <div class="cta-row" style="margin-top:1.5rem">
+            <a class="btn primary" href="../index.html#projects">Back to Portfolio</a>
+            <a class="btn outline" href="../index.html#contact">Contact</a>
+          </div>
+        </div>
+        <figure class="detail-hero__media">
+          <img src="../assets/images/project-api.svg" alt="API starter diagram" />
+          <figcaption>Blueprint featuring routing, auth, testing, and CI layers.</figcaption>
+        </figure>
+      </section>
+
+      <section class="snap-section detail-section reveal">
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Features</h3>
+            <ul>
+              <li>Request validation via Zod + centralized error handling.</li>
+              <li>JWT auth with role guards and refresh token rotation.</li>
+              <li>Prisma migrations + seed scripts.</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <h3>Developer Experience</h3>
+            <p>
+              Includes VS Code snippets, REST Client examples, and `taskfile` commands for linting, testing, and
+              deployment.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>CI/CD</h3>
+            <p>
+              GitHub Actions runs lint/test suites, builds Docker images, and promotes to staging once checks pass.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Extensibility</h3>
+            <p>Scoped modules let teams plug in GraphQL, WebSockets, or queue workers without touching shared code.</p>
+          </article>
         </div>
       </section>
 
-      <section class="section">
-        <div class="container">
-          <h2 class="section-title">Included</h2>
-          <ul>
-            <li>Request validation and error handling</li>
-            <li>JWT authentication and role guards</li>
-            <li>Testing setup with coverage</li>
-            <li>Automated CI workflows</li>
-          </ul>
+      <section class="snap-section detail-section reveal">
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Use It</h3>
+            <div class="cta-row" style="margin-top:1rem">
+              <a class="btn ghost" href="../index.html#contact">Download Starter</a>
+              <a class="btn ghost" href="../index.html#contact">Get Help</a>
+            </div>
+          </article>
+          <article class="detail-card">
+            <h3>Roadmap</h3>
+            <ul>
+              <li>Add gRPC transport option.</li>
+              <li>Bundle OpenAPI generator + SDK templates.</li>
+              <li>Provide Terraform snippets for AWS + Azure.</li>
+            </ul>
+          </article>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container">
-        <p>© <span id="year"></span> Ayaan • Project: API Starter</p>
-        <div class="footer-links"><a href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:ayaanazfar2000@gmail.com">Email</a></div>
+        <p>&copy; <span id="year"></span> Ayaan - API Starter</p>
+        <div class="footer-links">
+          <a href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:ayaanazfar2000@gmail.com">Email</a>
+        </div>
       </div>
     </footer>
 
-    <script src="../assets/main.js"></script>
+    <script src="../script.js" defer></script>
   </body>
-  </html>
+</html>

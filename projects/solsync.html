@@ -1,121 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#0b0f14" />
-    <title>SolSync — Solana Trading Bot — Project</title>
-    <meta name="description" content="Python-based Solana trading bot with copy-trading and latency optimization." />
-    <link rel="stylesheet" href="../assets/style.css" />
+    <title>SolSync - Project Detail</title>
+    <meta
+      name="description"
+      content="Copy-trading automation on Solana with transparent vaults, telemetry, and latency-optimized execution."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
   </head>
   <body>
-    <div class="bg-grid" aria-hidden="true"></div>
-    <header class="site-header">
-      <div class="container">
-        <a class="logo" href="../index.html#projects"><span>&lt;</span>Ayaan<span>/&gt;</span></a>
-        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
-        <nav class="site-nav" id="nav">
-          <a href="../index.html#about">About</a>
-          <a href="../index.html#skills">Skills</a>
-          <a href="../index.html#timeline">Timeline</a>
-          <a href="../index.html#projects">Projects</a>
-          <a href="../index.html#contact">Contact</a>
-        </nav>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header" role="banner">
+      <div class="brand">
+        <a href="../index.html#home" class="logo" aria-label="Navigate to home">
+          <span class="code">&lt;/&gt;</span>Ayaan.dev
+        </a>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../index.html#certifications" class="nav-link">Certifications</a>
+        <a href="../index.html#experience" class="nav-link">Experience</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-controls">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="theme-text">Dark</span>
+        </button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
       </div>
     </header>
 
-    <main>
-      <!-- SolSync Marketplace at top -->
-      <section class="section">
-        <div class="container">
-          <h2 class="section-title">⚡ SolSync Marketplace — The Future of Social Crypto Trading</h2>
-
-          <div class="callout tagline">Re-defining how crypto is traded.</div>
-
-          <div class="grid-2" style="margin-top:16px">
-            <div>
-              <h3>Overview</h3>
-              <p>
-                SolSync began as an automated trading bot on the Solana blockchain, designed to mirror a trader’s transactions in real time. The next phase transforms it into a crypto marketplace where verified traders can publicly share their trades while others can safely invest in them. Users will be able to directly invest into wallets instead of tokens — the wallet’s manager executes trades and the follower mirrors them simultaneously.
-              </p>
-
-              <h3>Vision</h3>
-              <p>
-                A non-custodial, transparent, and secure platform that lets anyone participate in crypto markets by following proven traders. Leaders earn performance-based rewards; followers gain real-time access to expert strategies — all enforced through smart contracts and on-chain accountability.
-              </p>
+    <main class="detail-page">
+      <section class="snap-section detail-hero project-solsync reveal">
+        <div class="detail-hero__content">
+          <p class="eyebrow">Crypto Automation - Product</p>
+          <h1>SolSync</h1>
+          <p class="tagline">
+            Real-time copy-trading network on Solana where followers allocate to trusted vaults and receive mirrored
+            trades with millisecond latency.
+          </p>
+          <ul class="detail-tags">
+            <li>Solana</li>
+            <li>Rust + Python</li>
+            <li>WebSockets</li>
+            <li>Next.js</li>
+          </ul>
+          <div class="detail-metrics">
+            <div class="metric">
+              <span>Latency Reduction</span>
+              <strong>30%</strong>
             </div>
-
-            <div>
-              <h3>Core Features (Planned)</h3>
-              <div class="accordion" data-accordion>
-                <div class="acc-item">
-                  <button class="acc-button" aria-expanded="false">
-                    <span class="emoji">💼</span> Trader Vaults
-                  </button>
-                  <div class="acc-panel">
-                    <p>Each trader owns a blockchain-secured vault that records and executes every trade transparently.</p>
-                  </div>
-                </div>
-                <div class="acc-item">
-                  <button class="acc-button" aria-expanded="false">
-                    <span class="emoji">🤝</span> Copy &amp; Earn
-                  </button>
-                  <div class="acc-panel">
-                    <p>Followers allocate funds to a trader’s vault; profits are shared automatically via smart-contracted performance fees.</p>
-                  </div>
-                </div>
-                <div class="acc-item">
-                  <button class="acc-button" aria-expanded="false">
-                    <span class="emoji">🔒</span> Cyber-Secure Infrastructure
-                  </button>
-                  <div class="acc-panel">
-                    <p>Multi-layer safeguards, non-custodial wallets, and audited smart contracts ensure every transaction is safe.</p>
-                  </div>
-                </div>
-                <div class="acc-item">
-                  <button class="acc-button" aria-expanded="false">
-                    <span class="emoji">📊</span> Data Transparency
-                  </button>
-                  <div class="acc-panel">
-                    <p>On-chain performance metrics, risk analytics, and trade histories empower users to make informed choices.</p>
-                  </div>
-                </div>
-              </div>
+            <div class="metric">
+              <span>Vaults Tested</span>
+              <strong>12</strong>
+            </div>
+            <div class="metric">
+              <span>Success Rate</span>
+              <strong>99%</strong>
             </div>
           </div>
-
-          <div class="stack-and-links">
-            <div>
-              <h3>Technology Stack</h3>
-              <ul class="pill-list">
-                <li>Solana</li>
-                <li>Python</li>
-                <li>web3.py</li>
-                <li>Anchor (Smart Contracts)</li>
-                <li>RPC APIs</li>
-                <li>Next.js</li>
-              </ul>
-            </div>
-            <div class="cta-row">
-              <a class="btn" href="https://github.com/Ayaan06/SOLSYNC" target="_blank" rel="noopener">🔗 Repository</a>
-              <a class="btn primary" href="https://archiveofayaan.com/solsync" target="_blank" rel="noopener">🌐 Marketplace Beta (Coming Soon)</a>
-            </div>
+          <div class="cta-row" style="margin-top:1.5rem">
+            <a class="btn primary" href="https://github.com/Ayaan06/SOLSYNC" target="_blank" rel="noopener">View Repo</a>
+            <a class="btn outline" href="../index.html#projects">Back to Portfolio</a>
           </div>
+        </div>
+        <figure class="detail-hero__media">
+          <img src="../assets/images/project-solsync.svg" alt="Telemetry dashboard for SolSync" />
+          <figcaption>Telemetry board tracking wallet exposure, fill rate, and PnL in real time.</figcaption>
+        </figure>
+      </section>
 
-          <div class="cta-row" style="margin-top:20px">
-            <a class="btn ghost" href="../index.html#projects">← Back to Projects</a>
-          </div>
+      <section class="snap-section detail-section reveal">
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Architecture</h3>
+            <p>
+              Rust microservices stream RPC events over WebSockets into a Python strategy layer. Followers subscribe to
+              vaults, and Anchor smart contracts guarantee revenue sharing without custody risk.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Marketplace Vision</h3>
+            <p>
+              Verified traders publish transparent track records. Followers allocate capital to a vault and mirror every
+              transaction with continuous telemetry + alerting.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Security</h3>
+            <p>
+              Non-custodial wallets, hardened RPC keys, and on-chain fees make the system resilient. Threat models cover
+              reorgs, latency spikes, and malicious strategy code.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Product Surface</h3>
+            <p>
+              Built a Next.js dashboard featuring portfolio analytics, drawdown visualizations, and autopilot toggles so
+              followers can pause mirrors instantly.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="snap-section detail-section reveal">
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Roadmap</h3>
+            <ul>
+              <li>Launch compliance checks + KYB for public vault listings.</li>
+              <li>Expand analytics to include volatility buckets and on-chain reputation.</li>
+              <li>Ship mobile companion for notifications + quick allocation changes.</li>
+            </ul>
+          </article>
+          <article class="detail-card">
+            <h3>Call to Action</h3>
+            <p>Interested in collaborating on on-chain finance or testing the beta?</p>
+            <div class="cta-row" style="margin-top:1rem">
+              <a class="btn ghost" href="../index.html#contact">Reach Out</a>
+            </div>
+          </article>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="container">
-        <p>Ac <span id="year"></span> Ayaan — Project: SolSync</p>
-        <div class="footer-links"><a href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a><a href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a><a href="mailto:ayaanazfar2000@gmail.com">Email</a></div>
+        <p>&copy; <span id="year"></span> Ayaan - SolSync</p>
+        <div class="footer-links">
+          <a href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:ayaanazfar2000@gmail.com">Email</a>
+        </div>
       </div>
     </footer>
 
-    <script src="../assets/main.js"></script>
+    <script src="../script.js" defer></script>
   </body>
-  </html>
+</html>
