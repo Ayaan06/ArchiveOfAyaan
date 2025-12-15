@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CampusChat - Project Detail</title>
+    <meta
+      name="description"
+      content="CampusChat is a Next.js 16 App Router experience with dual auth, realtime or fast-polling chat, and an anonymous global lobby."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+    <header class="site-header" role="banner">
+      <div class="brand">
+        <a href="../index.html#home" class="logo" aria-label="Navigate to home">
+          <span class="code">&lt;/&gt;</span>Ayaan.dev
+        </a>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="../index.html#home" class="nav-link">Home</a>
+        <a href="../index.html#projects" class="nav-link">Projects</a>
+        <a href="../index.html#certifications" class="nav-link">Certifications</a>
+        <a href="../index.html#experience" class="nav-link">Experience</a>
+        <a href="../index.html#contact" class="nav-link">Contact</a>
+      </nav>
+      <div class="header-controls">
+        <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false">
+          <span class="theme-icon" aria-hidden="true"></span>
+          <span class="theme-text">Dark</span>
+        </button>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="detail-page">
+      <section class="snap-section detail-hero project-campuschat reveal">
+        <div class="detail-hero__content">
+          <p class="eyebrow">Campus Communities &mdash; Full Stack</p>
+          <h1>CampusChat</h1>
+          <p class="tagline">
+            Next.js 16 App Router chat experience where students authenticate with Google or credentials, join course rooms,
+            and chat in realtime or a fast polling fallback, plus an anonymous lobby on the landing page.
+          </p>
+          <ul class="detail-tags">
+            <li>Next.js 16 (App Router)</li>
+            <li>React 19</li>
+            <li>NextAuth</li>
+            <li>Prisma + Postgres</li>
+            <li>Supabase Realtime</li>
+            <li>Tailwind CSS v4</li>
+          </ul>
+          <div class="detail-metrics">
+            <div class="metric">
+              <span>Auth Strategies</span>
+              <strong>Google + credentials</strong>
+            </div>
+            <div class="metric">
+              <span>Delivery Mode</span>
+              <strong>Realtime or 3s polling</strong>
+            </div>
+            <div class="metric">
+              <span>Seed Catalog</span>
+              <strong>~6.5MB courses</strong>
+            </div>
+          </div>
+          <div class="cta-row" style="margin-top:1.5rem">
+            <a class="btn primary" href="../index.html#projects">Back to Portfolio</a>
+            <a class="btn outline" href="../index.html#contact">Request a Walkthrough</a>
+          </div>
+        </div>
+        <figure class="detail-hero__media">
+          <img src="../assets/images/project-campuschat.svg" alt="CampusChat interface showing course chat threads" />
+          <figcaption>Course-aware chat UI that toggles between realtime Supabase channels and fast polling.</figcaption>
+        </figure>
+      </section>
+
+      <section class="snap-section detail-section reveal">
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Next.js + React 19</h3>
+            <p>
+              App Router build with server components for data loading and client components for interactivity, keeping chat, dashboards,
+              and onboarding fast and predictable.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Authentication</h3>
+            <p>
+              NextAuth with Prisma adapter + Postgres enables Google OAuth alongside bcrypt-backed credentials. Sessions use the database
+              strategy to keep auth state durable across deployments.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Data Layer</h3>
+            <p>
+              Prisma runs on a pg pool via <code>@prisma/adapter-pg</code> with guards to avoid PgBouncer/poolers; connections must hit port
+              5432 directly for stability.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Design System</h3>
+            <p>
+              Tailwind CSS v4 lives in <code>app/globals.css</code> with custom CSS variables and a light/dark theme persisted in localStorage
+              (theme init in <code>app/layout.tsx</code> and <code>app/providers.tsx</code>).
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="snap-section detail-section reveal">
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Landing + Lobby</h3>
+            <p>
+              Public landing page (<code>app/page.tsx</code>) introduces the product and embeds an AnonymousGlobalChat component for drop-in
+              conversation backed by a dedicated anonymous user and the global course helper.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Auth + Onboarding</h3>
+            <p>
+              <code>app/auth/page.tsx</code> offers Google or credentials tabs; credentials signup hashes passwords, and login accepts email or
+              username. <code>app/onboarding/page.tsx</code> lets newcomers claim a username via server action.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Dashboard + Discovery</h3>
+            <p>
+              <code>app/dashboard/page.tsx</code> fetches memberships server-side to show recent classes. <code>app/classes/page.tsx</code> lists
+              all courses with member counts and search/filter/sort controls so students can join then redirect to chat.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Chat Experience</h3>
+            <p>
+              <code>app/chat/page.tsx</code> gates access on session, auto-enrolls users into the global course, honors <code>?courseId=</code>
+              for deep links, and renders a ChatExperience client with course filtering, membership pills, infinite scroll, and profile modals.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="snap-section detail-section reveal">
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Realtime &amp; Ordering</h3>
+            <p>
+              When Supabase keys exist, clients subscribe to <code>messages-course-{id}</code> channels for INSERT fan-out; otherwise they poll
+              every 3 seconds. Client-side <code>sortMessages</code>/<code>mergeMessages</code> normalize ordering so pagination and live events
+              co-exist cleanly.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Messaging Surface</h3>
+            <p>
+              The UI announces delivery mode (&ldquo;Realtime connected&rdquo; vs. &ldquo;Live via polling&rdquo;), exposes &ldquo;Load older
+              messages&rdquo; when a cursor exists, and keeps compose + sender profile modals responsive during mode changes.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Global Membership</h3>
+            <p>
+              A seeded <code>global-chat</code> Course and helper auto-enroll new users so everyone can chat immediately, while the anonymous user
+              powers the public lobby.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>APIs</h3>
+            <p>
+              <code>/api/messages</code> handles cursor pagination and auto-join on read/send, <code>/api/courses/join</code> supports join by id
+              or code, <code>/api/profile</code> validates majors/years + normalizes interests, and <code>/api/public-global-chat</code> runs the
+              anonymous lobby.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="snap-section detail-section reveal">
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Data Model</h3>
+            <p>
+              Prisma schema defines User (username, majorId, year, interests, optional passwordHash), Account/Session/VerificationToken,
+              Course + ClassMembership join table, and Message indexed by course and creation timestamp.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Tooling &amp; Seeds</h3>
+            <p>
+              <code>scripts/maybe-run-migrations.js</code> runs migrations pre-build if the DB is reachable. <code>scripts/seed-courses.js</code>
+              ingests <code>full_course_offerings.json</code> (~6.5MB) to populate thousands of Course rows with derived major/level data.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Environment Guards</h3>
+            <p>
+              Env keys: <code>DATABASE_URL</code> (direct Postgres 5432), <code>GOOGLE_CLIENT_ID/SECRET</code>, <code>NEXTAUTH_SECRET</code>,
+              <code>NEXTAUTH_URL</code>, optional <code>NEXT_PUBLIC_SUPABASE_URL</code>/<code>NEXT_PUBLIC_SUPABASE_ANON_KEY</code>,
+              <code>SKIP_PRISMA_MIGRATE</code>, <code>DB_CONNECT_TIMEOUT_MS</code>, and <code>PRISMA_INSECURE_TLS</code>.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Profile UX</h3>
+            <p>
+              <code>app/profile/page.tsx</code> + <code>ProfileForm</code> let users edit name/major/year/interests with validation
+              (<code>lib/profile.ts</code>), calling <code>/api/profile</code>. Snapshot cards mirror current selections for quick verification.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="snap-section detail-section reveal">
+        <div class="detail-grid">
+          <article class="detail-card">
+            <h3>Navigation + Layout</h3>
+            <p>
+              AppLayout + TopNav provide active link highlighting, theme toggles, and sign-out flows while maintaining consistent rounded cards,
+              gradients, and accessibility-focused focus states.
+            </p>
+          </article>
+          <article class="detail-card">
+            <h3>Portfolio Wins</h3>
+            <p>
+              Built a dual-auth, course-aware chat product with realtime + graceful polling fallback, infinite scroll, membership auto-enrollment,
+              seeded course catalog, and deployment-friendly migration guards.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; <span id="year"></span> Ayaan - CampusChat</p>
+        <div class="footer-links">
+          <a href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="mailto:ayaanazfar2000@gmail.com">Email</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../script.js" defer></script>
+  </body>
+</html>

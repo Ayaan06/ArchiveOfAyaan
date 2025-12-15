@@ -78,9 +78,39 @@
       </section>
 
       <!-- Projects (one per screen) -->
-      <section class="snap-section project-panel project-mlpicks reveal" id="projects">
+      <section class="snap-section project-panel project-campuschat reveal" id="projects">
         <div class="project-copy">
           <p class="eyebrow">Project 01</p>
+          <h2>CampusChat &mdash; Class Communities</h2>
+          <p>
+            Next.js App Router platform where students join course rooms, chat in realtime or fast polling, and drop into
+            a public anonymous lobby on the landing page.
+          </p>
+          <ul>
+            <li>NextAuth with Prisma + Postgres powers Google OAuth and bcrypt credentials with DB-backed sessions and pooler safeguards.</li>
+            <li>Supabase channels fan out new messages when keys exist; client-side ordering keeps realtime + pagination merged with a 3s polling fallback.</li>
+            <li>Dashboard + class browser auto-enrolls the global course, lets users join by code, and pairs with a profile editor for name/major/year/interests.</li>
+          </ul>
+          <div class="project-meta">
+            <span>Next.js 16</span>
+            <span>React 19</span>
+            <span>NextAuth</span>
+            <span>Prisma + Postgres</span>
+            <span>Tailwind CSS v4</span>
+            <span>Supabase</span>
+          </div>
+          <div class="project-actions">
+            <a href="projects/campuschat.html" class="btn primary" target="_blank" rel="noopener">View More</a>
+          </div>
+        </div>
+        <figure class="project-media">
+          <img src="assets/images/project-campuschat.svg" alt="CampusChat class chat interface" />
+        </figure>
+      </section>
+
+      <section class="snap-section project-panel project-mlpicks reveal">
+        <div class="project-copy">
+          <p class="eyebrow">Project 02</p>
           <h2>MLPicks &mdash; NBA Prop Intelligence</h2>
           <p>
             End-to-end NBA over/under prediction engine with a FastAPI backend, scikit-learn models, React/Vite dashboard, and a
@@ -118,7 +148,7 @@
 
       <section class="snap-section project-panel project-solsync reveal">
         <div class="project-copy">
-          <p class="eyebrow">Project 02</p>
+          <p class="eyebrow">Project 03</p>
           <h2>SolSync &mdash; Solana Copy Trading</h2>
           <p>
             Local copy-trading engine that watches a &ldquo;master&rdquo; wallet, interprets balance deltas as buy/sell signals,
@@ -156,7 +186,7 @@
 
       <section class="snap-section project-panel project-ai reveal">
         <div class="project-copy">
-          <p class="eyebrow">Project 03</p>
+          <p class="eyebrow">Project 04</p>
           <h2>TumorAI &mdash; Brain Tumor Classifier</h2>
           <p>
             Educational ResNet-18 fine-tune over a Kaggle MRI dataset that serves predictions via Gradio with loud
@@ -193,7 +223,7 @@
 
       <section class="snap-section project-panel project-hardware reveal">
         <div class="project-copy hardware-intro">
-          <p class="eyebrow">Project 04</p>
+          <p class="eyebrow">Project 05</p>
           <h2>Building Hardware From Scratch</h2>
         </div>
         <div class="hardware-grid">

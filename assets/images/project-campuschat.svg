@@ -1,0 +1,32 @@
+<svg width="420" height="280" viewBox="0 0 420 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="campuschat-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#041428" />
+      <stop offset="100%" stop-color="#0a1f3a" />
+    </linearGradient>
+    <linearGradient id="campuschat-accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#25cef0" />
+      <stop offset="100%" stop-color="#61f4de" />
+    </linearGradient>
+  </defs>
+  <rect width="420" height="280" rx="32" fill="url(#campuschat-bg)" />
+  <rect x="54" y="46" width="312" height="188" rx="20" fill="#0c1f3a" stroke="#183456" stroke-width="2" />
+  <rect x="70" y="62" width="280" height="14" rx="7" fill="#0f2a4f" />
+  <circle cx="82" cy="69" r="4" fill="#25cef0" />
+  <circle cx="96" cy="69" r="4" fill="#61f4de" />
+  <circle cx="110" cy="69" r="4" fill="#8b5cf6" />
+  <rect x="84" y="88" width="140" height="46" rx="12" fill="url(#campuschat-accent)" opacity="0.9" />
+  <rect x="110" y="138" width="196" height="46" rx="12" fill="#122b4d" stroke="#1c3f6f" stroke-width="2" />
+  <rect x="240" y="100" width="110" height="20" rx="10" fill="#122b4d" />
+  <rect x="248" y="106" width="60" height="8" rx="4" fill="#61f4de" opacity="0.8" />
+  <rect x="94" y="150" width="80" height="10" rx="5" fill="#25cef0" opacity="0.8" />
+  <rect x="94" y="166" width="150" height="10" rx="5" fill="#1f9cf5" opacity="0.7" />
+  <rect x="84" y="194" width="220" height="18" rx="9" fill="#0f2a4f" stroke="#1c3f6f" />
+  <rect x="92" y="198" width="110" height="10" rx="5" fill="#61f4de" opacity="0.8" />
+  <rect x="228" y="198" width="64" height="10" rx="5" fill="#25cef0" opacity="0.8" />
+  <rect x="310" y="192" width="40" height="24" rx="12" fill="#8b5cf6" opacity="0.7" />
+  <rect x="292" y="214" width="84" height="14" rx="7" fill="#0f2a4f" stroke="#1c3f6f" />
+  <rect x="300" y="218" width="40" height="6" rx="3" fill="#61f4de" opacity="0.8" />
+  <rect x="224" y="214" width="60" height="14" rx="7" fill="#0f2a4f" stroke="#1c3f6f" />
+  <rect x="232" y="218" width="32" height="6" rx="3" fill="#25cef0" opacity="0.8" />
+</svg>
