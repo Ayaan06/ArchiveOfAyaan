@@ -107,6 +107,27 @@ if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
+// Show a real frame (e.g., 1s in) as the initial poster so users see the actual video content immediately.
+const videosWithPreview = document.querySelectorAll('video[data-preview-seconds]');
+videosWithPreview.forEach((video) => {
+  const previewSeconds = Number(video.dataset.previewSeconds);
+  if (!Number.isFinite(previewSeconds) || previewSeconds <= 0) return;
+
+  const seekToPreview = () => {
+    try {
+      video.currentTime = previewSeconds;
+    } catch (error) {
+      // Ignore if the browser is still loading metadata; the handler will re-run once ready.
+    }
+  };
+
+  if (video.readyState >= 1) {
+    seekToPreview();
+  } else {
+    video.addEventListener('loadedmetadata', seekToPreview, { once: true });
+  }
+});
+
 // Swipe-able project slider used on the archive page.
 const sliderInstances = document.querySelectorAll('[data-slider]');
 sliderInstances.forEach((slider) => {
