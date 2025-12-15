@@ -147,7 +147,7 @@ body::before {
 :root[data-theme='light'] .more-project-card,
 :root[data-theme='light'] .detail-card,
 :root[data-theme='light'] .metric {
-  background: linear-gradient(155deg, #ffffff 0%, #f3f6ff 100%);
+  background: linear-gradient(155deg, #f7f9ff 0%, #eef4ff 100%);
   border-color: rgba(15, 23, 42, 0.12);
   box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
 }
