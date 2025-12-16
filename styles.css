@@ -1019,6 +1019,13 @@ body::before {
   padding: clamp(2.5rem, 5vw, 4rem);
 }
 
+.detail-page .snap-section {
+  min-height: auto;
+  padding: clamp(2rem, 4vw, 3rem) clamp(1.25rem, 6vw, 3.5rem);
+  scroll-snap-align: none;
+  scroll-snap-stop: normal;
+}
+
 .detail-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

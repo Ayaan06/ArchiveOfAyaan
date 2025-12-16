@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CampusChat - Project Detail</title>
+    <title>GryphChat - Project Detail</title>
     <meta
       name="description"
-      content="CampusChat is a Next.js 16 App Router experience with dual auth, realtime or fast-polling chat, and an anonymous global lobby."
+      content="GryphChat is a campus-wide messaging platform where students discover class group chats, run polls, and plan study sessions with realtime or polling chat."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -48,36 +48,54 @@
       <section class="snap-section detail-hero project-campuschat reveal">
         <div class="detail-hero__content">
           <p class="eyebrow">Campus Communities &mdash; Full Stack</p>
-          <h1>CampusChat</h1>
-          <p class="tagline">
-            Next.js 16 App Router chat experience where students authenticate with Google or credentials, join course rooms,
-            and chat in realtime or a fast polling fallback, plus an anonymous lobby on the landing page.
+          <h1>GryphChat</h1>
+          <p class="tagline">💭 Ever struggled to find the group chat for your class or people to study with on campus?</p>
+          <p>
+            Between scattered Discord links, Instagram chats, and last minute invites, it always felt harder than it should be
+            to connect with classmates or organize study sessions. I ran into the same problem, so I built GryphChat, a
+            campus-wide messaging platform where students can discover their class group chats, message peers, run polls, and
+            plan study sessions all in one place.
           </p>
+          <p>🔗 <a href="https://gryphchat.com" target="_blank" rel="noopener">gryphchat.com</a></p>
+          <p>
+            Currently, this project is built specifically for students in the University of Guelph though if you would like to
+            see an app like this for your university, feel free to connect with me!
+          </p>
+          <p>From a technical standpoint, GryphChat is a full-stack web application built with production reliability in mind:</p>
           <ul class="detail-tags">
-            <li>Next.js 16 (App Router)</li>
-            <li>React 19</li>
-            <li>NextAuth</li>
-            <li>Prisma + Postgres</li>
-            <li>Supabase Realtime</li>
-            <li>Tailwind CSS v4</li>
+            <li>OAuth 2.0 (Google) + credentials via NextAuth</li>
+            <li>Next.js 16 (App Router) + React 19</li>
+            <li>Prisma + Postgres for users, courses, memberships, messages</li>
+            <li>Supabase Realtime with a polling fallback</li>
+            <li>Cursor-based pagination with infinite scroll</li>
           </ul>
+          <p>
+            This project pushed me to think beyond features and focus on scalability, user experience, and real world deployment
+            constraints while building something students would actually use.
+          </p>
+          <p>
+            We are currently testing GryphChat with 50+ active users, and I would love any feedback as we continue to iterate and
+            improve the platform.
+          </p>
+          <p class="tagline">#FullStack #NextJS #React #OAuth #SoftwareEngineering #WebDevelopment #StudentBuilders</p>
           <div class="detail-metrics">
             <div class="metric">
-              <span>Auth Strategies</span>
-              <strong>Google + credentials</strong>
+              <span>Active Users</span>
+              <strong>50+ testers</strong>
             </div>
             <div class="metric">
-              <span>Delivery Mode</span>
-              <strong>Realtime or 3s polling</strong>
+              <span>Campus</span>
+              <strong>University of Guelph</strong>
             </div>
             <div class="metric">
-              <span>Seed Catalog</span>
-              <strong>~6.5MB courses</strong>
+              <span>Delivery</span>
+              <strong>Realtime + polling fallback</strong>
             </div>
           </div>
           <div class="cta-row" style="margin-top:1.5rem">
-            <a class="btn primary" href="../index.html#projects">Back to Portfolio</a>
-            <a class="btn outline" href="../index.html#contact">Request a Walkthrough</a>
+            <a class="btn primary" href="https://gryphchat.com" target="_blank" rel="noopener">Visit GryphChat</a>
+            <a class="btn outline" href="../index.html#projects">Back to Portfolio</a>
+            <a class="btn ghost" href="../index.html#contact">Request a Walkthrough</a>
           </div>
         </div>
         <figure class="detail-hero__media">
@@ -243,7 +261,7 @@
 
     <footer class="site-footer">
       <div class="container">
-        <p>&copy; <span id="year"></span> Ayaan - CampusChat</p>
+        <p>&copy; <span id="year"></span> Ayaan - GryphChat</p>
         <div class="footer-links">
           <a href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a>
           <a href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a>

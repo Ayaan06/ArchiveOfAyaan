@@ -56,11 +56,12 @@
               University of Guelph student searching for Summer 2026 internships.
             </p>
             <p class="hero-bio">
-              From building AI models that flag tumors in medical scans to engineering blockchain trading automations, I care about
-              software that makes a measurable impact.
+              From building AI models that flag tumors in medical scans to a campus-wide messaging platform
+              <a href="https://gryphchat.com" target="_blank" rel="noopener">GryphChat.com</a> with 100+ uses, I care about software
+              that makes a measurable impact.
             </p>
             <ul class="hero-highlights">
-              <li>Azure ML Studio, PyTorch, TensorFlow, Web3.py, SwiftUI, Power BI</li>
+              <li>Azure ML Studio, PyTorch, Java, Python, SwiftUI, Power BI, AWS, GCP</li>
               <li>Certifications: AZ-900, AI-900, AWS CLF-C02, SC-900, CompTIA Security+</li>
               <li>Experience with Apple x OurWaveHub, Town of Oakville, and University of Guelph research teams</li>
             </ul>
@@ -82,14 +83,25 @@
         <div class="project-copy">
           <p class="eyebrow">Project 01</p>
           <h2>CampusChat &mdash; Class Communities</h2>
+          <p>💭 Ever struggled to find the group chat for your class or people to study with on campus?</p>
           <p>
-            Next.js App Router platform where students join course rooms, chat in realtime or fast polling, and drop into
-            a public anonymous lobby on the landing page.
+            Between scattered Discord links, Instagram chats, and last minute invites, it always felt harder than it should be
+            to connect with classmates or organize study sessions. I ran into the same problem, so I built GryphChat, a
+            campus-wide messaging platform where students can discover their class group chats, message peers, run polls,
+            and plan study sessions all in one place.
           </p>
+          <p>🔗 <a href="https://gryphchat.com" target="_blank" rel="noopener">gryphchat.com</a></p>
+          <p>
+            Currently, this project is built specifically for students in the University of Guelph though if you would like to
+            see an app like this for your university, feel free to connect with me!
+          </p>
+          <p>From a technical standpoint, GryphChat is a full-stack web application built with production reliability in mind:</p>
           <ul>
-            <li>NextAuth with Prisma + Postgres powers Google OAuth and bcrypt credentials with DB-backed sessions and pooler safeguards.</li>
-            <li>Supabase channels fan out new messages when keys exist; client-side ordering keeps realtime + pagination merged with a 3s polling fallback.</li>
-            <li>Dashboard + class browser auto-enrolls the global course, lets users join by code, and pairs with a profile editor for name/major/year/interests.</li>
+            <li>OAuth 2.0 (Google) and credentials authentication using NextAuth.</li>
+            <li>Next.js 16 (App Router) and React 19 for scalable UI and routing.</li>
+            <li>Prisma and Postgres to model users, courses, memberships, and messages.</li>
+            <li>Supabase Realtime for live chat with a polling fallback.</li>
+            <li>Cursor-based pagination and infinite scroll for consistent message ordering.</li>
           </ul>
           <div class="project-meta">
             <span>Next.js 16</span>
