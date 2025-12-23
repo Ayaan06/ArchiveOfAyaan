@@ -120,9 +120,46 @@
         </figure>
       </section>
 
-      <section class="snap-section project-panel project-mlpicks reveal">
+      <section class="snap-section project-panel project-ai reveal">
         <div class="project-copy">
           <p class="eyebrow">Project 02</p>
+          <h2>TumorAI &mdash; Brain Tumor Classifier</h2>
+          <p>
+            Educational ResNet-18 fine-tune over a Kaggle MRI dataset that serves predictions via Gradio with loud
+            &ldquo;not for medical use&rdquo; framing.
+          </p>
+          <ul>
+            <li>Training script wires ImageFolder datasets, augmentation, validation tracking, and checkpoints weights + class metadata.</li>
+            <li>Gradio app mirrors training transforms to keep inference honest, returning probability distributions with markdown context.</li>
+            <li>Notes highlight dataset pitfalls (class mappings, augmentation balance, GPU/CPU switching) to help future contributors.</li>
+          </ul>
+          <div class="project-meta">
+            <span>PyTorch</span>
+            <span>Gradio</span>
+            <span>Python</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Ayaan06/TumorAI" class="btn primary" target="_blank" rel="noopener">View Repo</a>
+            <a href="https://github.com/Ayaan06/TumorAI#readme" class="btn outline" target="_blank" rel="noopener">Model Notes</a>
+          </div>
+        </div>
+        <figure class="project-media">
+          <video
+            src="assets/videos/Brain%20Tumor%20Type%20Detection%20(Not%20for%20Medical%20Use)%20-%20Screencastify%20-%20November%2018%2C%202025%2010_35%20PM.webm"
+            controls
+            playsinline
+            preload="metadata"
+            data-preview-seconds="1"
+            poster="assets/images/project-ai.svg"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </figure>
+      </section>
+
+      <section class="snap-section project-panel project-mlpicks reveal">
+        <div class="project-copy">
+          <p class="eyebrow">Project 03</p>
           <h2>MLPicks &mdash; NBA Prop Intelligence</h2>
           <p>
             End-to-end NBA over/under prediction engine with a FastAPI backend, scikit-learn models, React/Vite dashboard, and a
@@ -160,7 +197,7 @@
 
       <section class="snap-section project-panel project-solsync reveal">
         <div class="project-copy">
-          <p class="eyebrow">Project 03</p>
+          <p class="eyebrow">Project 04</p>
           <h2>SolSync &mdash; Solana Copy Trading</h2>
           <p>
             Local copy-trading engine that watches a &ldquo;master&rdquo; wallet, interprets balance deltas as buy/sell signals,
@@ -190,43 +227,6 @@
             preload="metadata"
             data-preview-seconds="1"
             poster="assets/images/project-solsync.svg"
-          >
-            Your browser does not support the video tag.
-          </video>
-        </figure>
-      </section>
-
-      <section class="snap-section project-panel project-ai reveal">
-        <div class="project-copy">
-          <p class="eyebrow">Project 04</p>
-          <h2>TumorAI &mdash; Brain Tumor Classifier</h2>
-          <p>
-            Educational ResNet-18 fine-tune over a Kaggle MRI dataset that serves predictions via Gradio with loud
-            &ldquo;not for medical use&rdquo; framing.
-          </p>
-          <ul>
-            <li>Training script wires ImageFolder datasets, augmentation, validation tracking, and checkpoints weights + class metadata.</li>
-            <li>Gradio app mirrors training transforms to keep inference honest, returning probability distributions with markdown context.</li>
-            <li>Notes highlight dataset pitfalls (class mappings, augmentation balance, GPU/CPU switching) to help future contributors.</li>
-          </ul>
-          <div class="project-meta">
-            <span>PyTorch</span>
-            <span>Gradio</span>
-            <span>Python</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/Ayaan06/TumorAI" class="btn primary" target="_blank" rel="noopener">View Repo</a>
-            <a href="https://github.com/Ayaan06/TumorAI#readme" class="btn outline" target="_blank" rel="noopener">Model Notes</a>
-          </div>
-        </div>
-        <figure class="project-media">
-          <video
-            src="assets/videos/Brain%20Tumor%20Type%20Detection%20(Not%20for%20Medical%20Use)%20-%20Screencastify%20-%20November%2018%2C%202025%2010_35%20PM.webm"
-            controls
-            playsinline
-            preload="metadata"
-            data-preview-seconds="1"
-            poster="assets/images/project-ai.svg"
           >
             Your browser does not support the video tag.
           </video>
@@ -533,7 +533,7 @@
           <a class="btn ghost" href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a>
           <a class="btn outline" href="assets/images/Ayaan Azfar Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
         </div>
-        <p class="footer-note">&copy; <span id="year">2025</span> Ayaan Azfar - Crafted with intent.</p>
+        <p class="footer-note">&copy; <span id="year">2025</span> Ayaan Azfar</p>
       </section>
     </main>
 
