@@ -28,6 +28,7 @@
       <nav class="site-nav" aria-label="Primary">
         <a href="#home" class="nav-link">Home</a>
         <a href="#projects" class="nav-link">Projects</a>
+        <a href="#example-code" class="nav-link">Example Code</a>
         <a href="#certifications" class="nav-link">Certifications</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#contact" class="nav-link">Contact</a>
@@ -442,6 +443,239 @@
             </article>
 
           </div>
+        </div>
+      </section>
+
+      <!-- Example Code -->
+      <section class="snap-section example-code reveal" id="example-code">
+        <div class="section-header">
+          <p class="eyebrow">Code Showcase</p>
+          <h2>Example Code</h2>
+          <p>A small Python showcase area for visitors to scan your coding style.</p>
+        </div>
+        <div class="code-showcase" aria-label="Python example code">
+          <div class="code-toolbar">
+            <span>example.py</span>
+            <span>Python</span>
+          </div>
+          <pre><code class="language-python" id="python-code-output"></code></pre>
+          <script type="text/plain" id="python-code-source">
+# PASTE YOUR PYTHON CODE BELOW THIS LINE
+# =============================================================
+# fraud_automation.py
+# Reads CS-Fraud emails from Outlook, extracts case data,
+# automates EFMS via Playwright, and logs results to Excel.
+# =============================================================
+
+import os
+import re
+from datetime import datetime
+
+import openpyxl
+import win32com.client
+from playwright.sync_api import sync_playwright
+
+
+# ── Config ────────────────────────────────────────────────────
+EFMS_URL             = "https://efms.com"
+LOG_FILE             = r"C:\Users\YourName\Documents\fraud_automation_log.xlsx"
+EMAIL_SUBJECT_FILTER = "CS-Fraud"
+FILE_NUMBER_PATTERN  = r'File Number:\s*(\S+)'
+CLIENT_ID_PATTERN    = r'Client_ID\s+(\S+)'
+LOG_HEADERS          = ["Date", "File Number", "Client ID", "Status", "Notes"]
+# ─────────────────────────────────────────────────────────────
+
+
+# ── Logging ───────────────────────────────────────────────────
+
+def get_or_create_log():
+    """Load existing log workbook or create a new one with headers."""
+    if os.path.exists(LOG_FILE):
+        wb = openpyxl.load_workbook(LOG_FILE)
+        ws = wb.active
+    else:
+        wb = openpyxl.Workbook()
+        ws = wb.active
+        ws.title = "Log"
+        ws.append(LOG_HEADERS)
+    return wb, ws
+
+
+def get_logged_file_numbers(ws):
+    """Return a set of file numbers already in the log to prevent duplicates."""
+    return {
+        str(row[1])
+        for row in ws.iter_rows(min_row=2, values_only=True)
+        if row[1]
+    }
+
+
+def log_case(ws, file_number, client_id, status, notes=""):
+    """Append a single case result row to the log worksheet."""
+    ws.append([
+        datetime.today().strftime("%Y-%m-%d %H:%M:%S"),
+        file_number,
+        client_id,
+        status,
+        notes
+    ])
+
+
+# ── Email Extraction ──────────────────────────────────────────
+
+def extract_emails(logged_file_numbers):
+    """
+    Connect to Outlook and extract new CS-Fraud cases from today's emails.
+    Skips any file numbers already present in the log.
+    """
+    print("Connecting to Outlook...")
+    outlook = win32com.client.Dispatch("Outlook.Application")
+    inbox   = outlook.GetNamespace("MAPI").GetDefaultFolder(6)
+    today   = datetime.today().date()
+    cases   = []
+
+    print(f"Scanning inbox for subject: '{EMAIL_SUBJECT_FILTER}'")
+
+    for msg in inbox.Items:
+        try:
+            # Skip emails not from today
+            if msg.ReceivedTime.date() != today:
+                continue
+
+            # Skip emails that don't match the subject filter
+            if EMAIL_SUBJECT_FILTER.lower() not in msg.Subject.lower():
+                continue
+
+            # Extract fields from email body
+            file_number_match = re.search(FILE_NUMBER_PATTERN, msg.Body)
+            client_id_match   = re.search(CLIENT_ID_PATTERN,   msg.Body)
+
+            if not file_number_match or not client_id_match:
+                continue
+
+            file_number = file_number_match.group(1)
+            client_id   = client_id_match.group(1)
+
+            # Skip if already processed
+            if file_number in logged_file_numbers:
+                print(f"  → Skipping duplicate — File: {file_number}")
+                continue
+
+            print(f"  → Found new case — File: {file_number} | Client ID: {client_id}")
+            cases.append({"file_number": file_number, "client_id": client_id})
+
+        except Exception as e:
+            print(f"  → Error reading email: {e}")
+
+    return cases
+
+
+# ── EFMS Automation ───────────────────────────────────────────
+
+def process_case(page, file_number, client_id):
+    """
+    Automate EFMS for a single case:
+    Search → Associated Cards → Insert → Enter ID → Verify List.
+    Returns (status, notes) to be written to the log.
+    """
+    try:
+        # Navigate and search by file number
+        print(f"  → Navigating to EFMS for File: {file_number}")
+        page.goto(EFMS_URL)
+        page.locator('[name="fieldID"]').fill(file_number)
+        page.keyboard.press("Enter")
+        page.wait_for_load_state("networkidle")
+
+        # Open associated cards
+        print(f"  → Clicking Associated Cards")
+        page.get_by_role("button", name="Associated Cards").click()
+        page.wait_for_load_state("networkidle")
+
+        # Click insert to open the input
+        print(f"  → Clicking Insert")
+        page.get_by_role("button", name="Insert").click()
+        page.wait_for_load_state("networkidle")
+
+        # Enter the client ID / card number
+        print(f"  → Entering Client ID: {client_id}")
+        page.get_by_role("textbox").fill(client_id)
+
+        # Verify the list
+        print(f"  → Clicking Verify List")
+        page.get_by_role("button", name="Verify List").click()
+        page.wait_for_load_state("networkidle")
+
+        print(f"✓ Processed — File: {file_number} | Client ID: {client_id}")
+        return "Success", ""
+
+    except Exception as e:
+        print(f"✗ Failed — File: {file_number} | Error: {e}")
+        return "Failed", str(e)
+
+
+# ── Main ──────────────────────────────────────────────────────
+
+def main():
+    print("=" * 50)
+    print(f"Fraud Automation Starting — {datetime.today().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("=" * 50)
+
+    # Load or create the log and get already-processed file numbers
+    wb, ws = get_or_create_log()
+    logged_file_numbers = get_logged_file_numbers(ws)
+    print(f"Loaded log — {len(logged_file_numbers)} previously processed case(s)")
+
+    # Extract new cases from today's emails
+    cases = extract_emails(logged_file_numbers)
+
+    if not cases:
+        print("\nNo new emails found for today. Exiting.")
+        return
+
+    print(f"\nFound {len(cases)} new case(s) to process. Starting EFMS automation...")
+    print("-" * 50)
+
+    # Launch browser and process each case
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=False)
+        page    = browser.new_page()
+
+        for i, case in enumerate(cases, 1):
+            print(f"\nCase {i} of {len(cases)}")
+            status, notes = process_case(page, case["file_number"], case["client_id"])
+            log_case(ws, case["file_number"], case["client_id"], status, notes)
+
+        browser.close()
+
+    # Save the log
+    wb.save(LOG_FILE)
+
+    print("\n" + "=" * 50)
+    print(f"Done — {len(cases)} case(s) processed")
+    print(f"Log saved to {LOG_FILE}")
+    print("=" * 50)
+
+
+if __name__ == "__main__":
+    main()
+
+# Keep your indentation exactly how you want it to appear on the site.
+
+def showcase_project(name, technologies):
+    """Return a formatted project summary."""
+    tech_list = ", ".join(technologies)
+    return f"{name} uses {tech_list}."
+
+
+if __name__ == "__main__":
+    summary = showcase_project(
+        "Example Code",
+        ["Python", "Clean Structure", "Readable Logic"],
+    )
+    print(summary)
+
+# PASTE YOUR PYTHON CODE ABOVE THIS LINE
+          </script>
         </div>
       </section>
 

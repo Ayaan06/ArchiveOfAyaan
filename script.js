@@ -101,6 +101,13 @@ const sectionObserver = new IntersectionObserver(
 
 document.querySelectorAll('.snap-section').forEach((section) => sectionObserver.observe(section));
 
+// Render the homepage Python showcase from a text/plain block so pasted code keeps indentation.
+const pythonCodeSource = document.getElementById('python-code-source');
+const pythonCodeOutput = document.getElementById('python-code-output');
+if (pythonCodeSource && pythonCodeOutput) {
+  pythonCodeOutput.textContent = pythonCodeSource.textContent.replace(/^\r?\n/, '').replace(/\r?\n\s*$/, '');
+}
+
 // Keep the footer year current.
 const yearEl = document.getElementById('year');
 if (yearEl) {

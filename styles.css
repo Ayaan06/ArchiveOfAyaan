@@ -640,6 +640,64 @@ body::before {
   background: transparent;
 }
 
+.example-code {
+  background: transparent;
+}
+
+.example-code .section-header p:last-child {
+  color: var(--text-muted);
+  max-width: 48ch;
+  line-height: 1.6;
+}
+
+.code-showcase {
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  background: rgba(2, 6, 23, 0.78);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+:root[data-theme='light'] .code-showcase {
+  background: rgba(15, 23, 42, 0.96);
+}
+
+.code-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  border-bottom: 1px solid var(--card-border);
+  color: #dbeafe;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.code-toolbar span:last-child {
+  color: var(--accent);
+}
+
+.code-showcase pre {
+  margin: 0;
+  max-height: min(58vh, 620px);
+  overflow: auto;
+  padding: clamp(1rem, 3vw, 1.5rem);
+}
+
+.code-showcase code {
+  display: block;
+  min-width: max-content;
+  color: #e8edf7;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
+  font-size: clamp(0.85rem, 1.8vw, 1rem);
+  line-height: 1.7;
+  tab-size: 4;
+  white-space: pre;
+}
+
 .section-header h2 {
   font-size: clamp(2rem, 4vw, 3rem);
   margin: 0;
