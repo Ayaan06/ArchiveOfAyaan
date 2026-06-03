@@ -51,20 +51,21 @@
       <section class="snap-section hero" id="home" aria-label="Intro">
         <div class="hero-grid">
           <div class="hero-copy reveal">
-            <p class="eyebrow">Computer Science (Co-op) Student</p>
+            <p class="eyebrow">Computer Science (Co-op) Student &mdash; Cybersecurity</p>
             <h1>Ayaan Azfar</h1>
             <p class="tagline">
-              University of Guelph student searching for Summer 2026 internships.
+              University of Guelph &bull; Cybersecurity Intern at Scotiabank &bull; 3.7 GPA
             </p>
             <p class="hero-bio">
-              From building AI models that flag tumors in medical scans to a campus-wide messaging platform
-              <a href="https://gryphchat.com" target="_blank" rel="noopener">GryphChat.com</a> with 100+ uses, I care about software
-              that makes a measurable impact.
+              From building an AI profile scoring platform at
+              <a href="https://howcrackedru.com" target="_blank" rel="noopener">HowCrackedRU</a> to a campus-wide
+              messaging platform <a href="https://gryphchat.com" target="_blank" rel="noopener">GryphChat.com</a> with
+              100+ users, I care about software that makes a measurable impact.
             </p>
             <ul class="hero-highlights">
-              <li>Azure ML Studio, PyTorch, Java, Python, SwiftUI, Power BI, AWS, GCP</li>
+              <li>Python, TypeScript, Swift, C/C++, SQL, PowerShell &mdash; Next.js, PyTorch, Splunk, Power BI, AWS, Azure, GCP</li>
               <li>Certifications: AZ-900, AI-900, AWS CLF-C02, SC-900, CompTIA Security+</li>
-              <li>Experience with Apple x OurWaveHub, Town of Oakville, and University of Guelph research teams</li>
+              <li>Experience: Scotiabank Cybersecurity, Apple x OurWaveHub iOS Co-op, Town of Oakville</li>
             </ul>
             <div class="cta-row">
               <a href="#projects" class="btn primary">View Projects</a>
@@ -80,9 +81,37 @@
       </section>
 
       <!-- Projects (one per screen) -->
-      <section class="snap-section project-panel project-campuschat reveal" id="projects">
+      <section class="snap-section project-panel project-howcracked reveal" id="projects">
         <div class="project-copy">
           <p class="eyebrow">Project 01</p>
+          <h2>HowCrackedRU &mdash; AI Profile Scoring Platform</h2>
+          <p>How do you objectively measure a developer's profile? I built an AI scoring platform that ingests resume, LinkedIn, and GitHub data into an Anthropic Claude inference layer to produce a weighted, multi-source score for university developers.</p>
+          <ul>
+            <li>Multi-source data pipeline pulls resume, LinkedIn, and GitHub data into a Claude inference layer for weighted scoring.</li>
+            <li>Serverless backend on Supabase and Vercel with Google OAuth, Row-Level Security, and Stripe one-time payments.</li>
+            <li>Optimized per-score cost to $0.01 through model selection and prompt engineering.</li>
+          </ul>
+          <p>🔗 <a href="https://howcrackedru.com" target="_blank" rel="noopener">howcrackedru.com</a></p>
+          <div class="project-meta">
+            <span>Next.js</span>
+            <span>TypeScript</span>
+            <span>Python</span>
+            <span>Supabase</span>
+            <span>Stripe</span>
+            <span>Anthropic Claude</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://howcrackedru.com" class="btn primary" target="_blank" rel="noopener">Visit Site</a>
+          </div>
+        </div>
+        <figure class="project-media">
+          <img src="assets/images/project-api.svg" alt="HowCrackedRU AI scoring platform" />
+        </figure>
+      </section>
+
+      <section class="snap-section project-panel project-campuschat reveal">
+        <div class="project-copy">
+          <p class="eyebrow">Project 02</p>
           <h2>CampusChat &mdash; Class Communities</h2>
           <p>💭 Ever struggled to find the group chat for your class or people to study with on campus?</p>
           <p>
@@ -123,7 +152,7 @@
 
       <section class="snap-section project-panel project-ai reveal">
         <div class="project-copy">
-          <p class="eyebrow">Project 02</p>
+          <p class="eyebrow">Project 03</p>
           <h2>TumorAI &mdash; Brain Tumor Classifier</h2>
           <p>
             Educational ResNet-18 fine-tune over a Kaggle MRI dataset that serves predictions via Gradio with loud
@@ -160,7 +189,7 @@
 
       <section class="snap-section project-panel project-mlpicks reveal">
         <div class="project-copy">
-          <p class="eyebrow">Project 03</p>
+          <p class="eyebrow">Project 04</p>
           <h2>MLPicks &mdash; NBA Prop Intelligence</h2>
           <p>
             End-to-end NBA over/under prediction engine with a FastAPI backend, scikit-learn models, React/Vite dashboard, and a
@@ -198,7 +227,7 @@
 
       <section class="snap-section project-panel project-solsync reveal">
         <div class="project-copy">
-          <p class="eyebrow">Project 04</p>
+          <p class="eyebrow">Project 05</p>
           <h2>SolSync &mdash; Solana Copy Trading</h2>
           <p>
             Local copy-trading engine that watches a &ldquo;master&rdquo; wallet, interprets balance deltas as buy/sell signals,
@@ -236,7 +265,7 @@
 
       <section class="snap-section project-panel project-hardware reveal">
         <div class="project-copy hardware-intro">
-          <p class="eyebrow">Project 05</p>
+          <p class="eyebrow">Project 06</p>
           <h2>Building Hardware From Scratch</h2>
         </div>
         <div class="hardware-grid">
@@ -730,25 +759,41 @@ if __name__ == "__main__":
           <article class="timeline-item">
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="timeline-card">
-              <div class="timeline-date">2024 - 2025</div>
-              <h3>Environmental Impact Analyst - Town of Oakville</h3>
-              <p>Analyzed sustainability metrics across 30+ municipal parks, built Power BI dashboards, and kept compliance reporting on track.</p>
+              <div class="timeline-date">May 2026 – August 2026</div>
+              <h3>Cybersecurity Intern &mdash; Scotiabank</h3>
+              <p>Investigating cyber-enabled fraud cases (phishing, malware, social engineering, account takeover, targeted cyber-attacks), gathering and preserving digital evidence to identify perpetrators and document TTPs. Applying data analytics with Python, Excel, and Splunk to detect fraud patterns; preparing investigative reports and trend analyses in Power BI and PowerPoint for senior management.</p>
             </div>
           </article>
           <article class="timeline-item">
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="timeline-card">
-              <div class="timeline-date">2024</div>
-              <h3>University of Guelph - B.Comp, CS (Co-op)</h3>
-              <p>Project Management minor, Academic Entrance Scholarship, Dean's List (3.7 GPA), Honour Roll.</p>
+              <div class="timeline-date">April 2025 – August 2025</div>
+              <h3>Parks &amp; Roads Student Worker &mdash; Town of Oakville</h3>
+              <p>Led Parks &amp; Roads assignments independently, mentoring new hires on safe use of tools, equipment, and vehicles. Took on Sanitation duties including waste collection and park washroom servicing during peak summer demand.</p>
             </div>
           </article>
           <article class="timeline-item">
             <div class="timeline-marker" aria-hidden="true"></div>
             <div class="timeline-card">
-              <div class="timeline-date">2022</div>
-              <h3>Software Engineer (iOS, Cloud, Security) - Apple x OurWaveHub</h3>
-              <p>Built Swift/SwiftUI features, integrated HealthKit and push notifications, and improved UX with TestFlight feedback loops.</p>
+              <div class="timeline-date">April 2024 – August 2024</div>
+              <h3>Parks &amp; Roads Student Worker &mdash; Town of Oakville</h3>
+              <p>Performed daily maintenance including waste collection, turf care, and trail and playground inspections. Operated equipment and Town vehicles safely while assisting crews with inspections, repairs, and event setup.</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-date">September 2024 – Present</div>
+              <h3>University of Guelph &mdash; B.Comp, Computer Science (Co-op)</h3>
+              <p>3.7 GPA &bull; Minor in Project Management &bull; Area of Emphasis in Cybersecurity &bull; Dean's List</p>
+            </div>
+          </article>
+          <article class="timeline-item">
+            <div class="timeline-marker" aria-hidden="true"></div>
+            <div class="timeline-card">
+              <div class="timeline-date">May 2022 – August 2022</div>
+              <h3>iOS App Developer Co-op Student &mdash; OurWaveHub (Apple partnered)</h3>
+              <p>Built and refactored Swift/SwiftUI components in Xcode following Apple's design system and accessibility guidelines, leveraging UIKit interoperability for an iOS app shipped to TestFlight. Implemented data persistence and multi-device sync using Core Data and CloudKit. Architected and shipped an end-to-end iOS app in Swift, owning the full development lifecycle.</p>
             </div>
           </article>
         </div>
