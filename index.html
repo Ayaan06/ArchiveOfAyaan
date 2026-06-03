@@ -28,7 +28,6 @@
       <nav class="site-nav" aria-label="Primary">
         <a href="#home" class="nav-link">Home</a>
         <a href="#projects" class="nav-link">Projects</a>
-        <a href="#example-code" class="nav-link">Example Code</a>
         <a href="#certifications" class="nav-link">Certifications</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#contact" class="nav-link">Contact</a>
@@ -62,11 +61,20 @@
               messaging platform <a href="https://gryphchat.com" target="_blank" rel="noopener">GryphChat.com</a> with
               100+ users, I care about software that makes a measurable impact.
             </p>
-            <ul class="hero-highlights">
-              <li>Python, TypeScript, Swift, C/C++, SQL, PowerShell &mdash; Next.js, PyTorch, Splunk, Power BI, AWS, Azure, GCP</li>
-              <li>Certifications: AZ-900, AI-900, AWS CLF-C02, SC-900, CompTIA Security+</li>
-              <li>Experience: Scotiabank Cybersecurity, Apple x OurWaveHub iOS Co-op, Town of Oakville</li>
-            </ul>
+            <div class="hero-chips">
+              <span class="hero-chip">Python</span>
+              <span class="hero-chip">TypeScript</span>
+              <span class="hero-chip">Swift</span>
+              <span class="hero-chip">C / C++</span>
+              <span class="hero-chip">SQL</span>
+              <span class="hero-chip">PowerShell</span>
+              <span class="hero-chip">Next.js</span>
+              <span class="hero-chip">PyTorch</span>
+              <span class="hero-chip">Splunk</span>
+              <span class="hero-chip">AWS</span>
+              <span class="hero-chip">Azure</span>
+              <span class="hero-chip">Docker</span>
+            </div>
             <div class="cta-row">
               <a href="#projects" class="btn primary">View Projects</a>
               <a href="#contact" class="btn ghost">Contact Me</a>
@@ -91,7 +99,6 @@
             <li>Serverless backend on Supabase and Vercel with Google OAuth, Row-Level Security, and Stripe one-time payments.</li>
             <li>Optimized per-score cost to $0.01 through model selection and prompt engineering.</li>
           </ul>
-          <p>🔗 <a href="https://howcrackedru.com" target="_blank" rel="noopener">howcrackedru.com</a></p>
           <div class="project-meta">
             <span>Next.js</span>
             <span>TypeScript</span>
@@ -113,19 +120,7 @@
         <div class="project-copy">
           <p class="eyebrow">Project 02</p>
           <h2>CampusChat &mdash; Class Communities</h2>
-          <p>💭 Ever struggled to find the group chat for your class or people to study with on campus?</p>
-          <p>
-            Between scattered Discord links, Instagram chats, and last minute invites, it always felt harder than it should be
-            to connect with classmates or organize study sessions. I ran into the same problem, so I built GryphChat, a
-            campus-wide messaging platform where students can discover their class group chats, message peers, run polls,
-            and plan study sessions all in one place.
-          </p>
-          <p>🔗 <a href="https://gryphchat.com" target="_blank" rel="noopener">gryphchat.com</a></p>
-          <p>
-            Currently, this project is built specifically for students in the University of Guelph though if you would like to
-            see an app like this for your university, feel free to connect with me!
-          </p>
-          <p>From a technical standpoint, GryphChat is a full-stack web application built with production reliability in mind:</p>
+          <p>Campus-wide real-time messaging platform used by 100+ University of Guelph students. Students can discover class group chats, message peers, run polls, and plan study sessions — all in one place.</p>
           <ul>
             <li>OAuth 2.0 (Google) and credentials authentication using NextAuth.</li>
             <li>Next.js 16 (App Router) and React 19 for scalable UI and routing.</li>
@@ -475,244 +470,51 @@
         </div>
       </section>
 
-      <!-- Example Code -->
-      <section class="snap-section example-code reveal" id="example-code">
-        <div class="section-header">
-          <p class="eyebrow">Code Showcase</p>
-          <h2>Example Code</h2>
-          <p>A small Python showcase area for visitors to scan your coding style.</p>
-        </div>
-        <div class="code-showcase" aria-label="Python example code">
-          <div class="code-toolbar">
-            <span>example.py</span>
-            <span>Python</span>
-          </div>
-          <pre><code class="language-python" id="python-code-output"></code></pre>
-          <script type="text/plain" id="python-code-source">
-# PASTE YOUR PYTHON CODE BELOW THIS LINE
-# =============================================================
-# fraud_automation.py
-# Reads CS-Fraud emails from Outlook, extracts case data,
-# automates EFMS via Playwright, and logs results to Excel.
-# =============================================================
-
-import os
-import re
-from datetime import datetime
-
-import openpyxl
-import win32com.client
-from playwright.sync_api import sync_playwright
-
-
-# ── Config ────────────────────────────────────────────────────
-EFMS_URL             = "https://efms.com"
-LOG_FILE             = r"C:\Users\YourName\Documents\fraud_automation_log.xlsx"
-EMAIL_SUBJECT_FILTER = "CS-Fraud"
-FILE_NUMBER_PATTERN  = r'File Number:\s*(\S+)'
-CLIENT_ID_PATTERN    = r'Client_ID\s+(\S+)'
-LOG_HEADERS          = ["Date", "File Number", "Client ID", "Status", "Notes"]
-# ─────────────────────────────────────────────────────────────
-
-
-# ── Logging ───────────────────────────────────────────────────
-
-def get_or_create_log():
-    """Load existing log workbook or create a new one with headers."""
-    if os.path.exists(LOG_FILE):
-        wb = openpyxl.load_workbook(LOG_FILE)
-        ws = wb.active
-    else:
-        wb = openpyxl.Workbook()
-        ws = wb.active
-        ws.title = "Log"
-        ws.append(LOG_HEADERS)
-    return wb, ws
-
-
-def get_logged_file_numbers(ws):
-    """Return a set of file numbers already in the log to prevent duplicates."""
-    return {
-        str(row[1])
-        for row in ws.iter_rows(min_row=2, values_only=True)
-        if row[1]
-    }
-
-
-def log_case(ws, file_number, client_id, status, notes=""):
-    """Append a single case result row to the log worksheet."""
-    ws.append([
-        datetime.today().strftime("%Y-%m-%d %H:%M:%S"),
-        file_number,
-        client_id,
-        status,
-        notes
-    ])
-
-
-# ── Email Extraction ──────────────────────────────────────────
-
-def extract_emails(logged_file_numbers):
-    """
-    Connect to Outlook and extract new CS-Fraud cases from today's emails.
-    Skips any file numbers already present in the log.
-    """
-    print("Connecting to Outlook...")
-    outlook = win32com.client.Dispatch("Outlook.Application")
-    inbox   = outlook.GetNamespace("MAPI").GetDefaultFolder(6)
-    today   = datetime.today().date()
-    cases   = []
-
-    print(f"Scanning inbox for subject: '{EMAIL_SUBJECT_FILTER}'")
-
-    for msg in inbox.Items:
-        try:
-            # Skip emails not from today
-            if msg.ReceivedTime.date() != today:
-                continue
-
-            # Skip emails that don't match the subject filter
-            if EMAIL_SUBJECT_FILTER.lower() not in msg.Subject.lower():
-                continue
-
-            # Extract fields from email body
-            file_number_match = re.search(FILE_NUMBER_PATTERN, msg.Body)
-            client_id_match   = re.search(CLIENT_ID_PATTERN,   msg.Body)
-
-            if not file_number_match or not client_id_match:
-                continue
-
-            file_number = file_number_match.group(1)
-            client_id   = client_id_match.group(1)
-
-            # Skip if already processed
-            if file_number in logged_file_numbers:
-                print(f"  → Skipping duplicate — File: {file_number}")
-                continue
-
-            print(f"  → Found new case — File: {file_number} | Client ID: {client_id}")
-            cases.append({"file_number": file_number, "client_id": client_id})
-
-        except Exception as e:
-            print(f"  → Error reading email: {e}")
-
-    return cases
-
-
-# ── EFMS Automation ───────────────────────────────────────────
-
-def process_case(page, file_number, client_id):
-    """
-    Automate EFMS for a single case:
-    Search → Associated Cards → Insert → Enter ID → Verify List.
-    Returns (status, notes) to be written to the log.
-    """
-    try:
-        # Navigate and search by file number
-        print(f"  → Navigating to EFMS for File: {file_number}")
-        page.goto(EFMS_URL)
-        page.locator('[name="fieldID"]').fill(file_number)
-        page.keyboard.press("Enter")
-        page.wait_for_load_state("networkidle")
-
-        # Open associated cards
-        print(f"  → Clicking Associated Cards")
-        page.get_by_role("button", name="Associated Cards").click()
-        page.wait_for_load_state("networkidle")
-
-        # Click insert to open the input
-        print(f"  → Clicking Insert")
-        page.get_by_role("button", name="Insert").click()
-        page.wait_for_load_state("networkidle")
-
-        # Enter the client ID / card number
-        print(f"  → Entering Client ID: {client_id}")
-        page.get_by_role("textbox").fill(client_id)
-
-        # Verify the list
-        print(f"  → Clicking Verify List")
-        page.get_by_role("button", name="Verify List").click()
-        page.wait_for_load_state("networkidle")
-
-        print(f"✓ Processed — File: {file_number} | Client ID: {client_id}")
-        return "Success", ""
-
-    except Exception as e:
-        print(f"✗ Failed — File: {file_number} | Error: {e}")
-        return "Failed", str(e)
-
-
-# ── Main ──────────────────────────────────────────────────────
-
-def main():
-    print("=" * 50)
-    print(f"Fraud Automation Starting — {datetime.today().strftime('%Y-%m-%d %H:%M:%S')}")
-    print("=" * 50)
-
-    # Load or create the log and get already-processed file numbers
-    wb, ws = get_or_create_log()
-    logged_file_numbers = get_logged_file_numbers(ws)
-    print(f"Loaded log — {len(logged_file_numbers)} previously processed case(s)")
-
-    # Extract new cases from today's emails
-    cases = extract_emails(logged_file_numbers)
-
-    if not cases:
-        print("\nNo new emails found for today. Exiting.")
-        return
-
-    print(f"\nFound {len(cases)} new case(s) to process. Starting EFMS automation...")
-    print("-" * 50)
-
-    # Launch browser and process each case
-    with sync_playwright() as p:
-        browser = p.chromium.launch(headless=False)
-        page    = browser.new_page()
-
-        for i, case in enumerate(cases, 1):
-            print(f"\nCase {i} of {len(cases)}")
-            status, notes = process_case(page, case["file_number"], case["client_id"])
-            log_case(ws, case["file_number"], case["client_id"], status, notes)
-
-        browser.close()
-
-    # Save the log
-    wb.save(LOG_FILE)
-
-    print("\n" + "=" * 50)
-    print(f"Done — {len(cases)} case(s) processed")
-    print(f"Log saved to {LOG_FILE}")
-    print("=" * 50)
-
-
-if __name__ == "__main__":
-    main()
-
-# Keep your indentation exactly how you want it to appear on the site.
-
-def showcase_project(name, technologies):
-    """Return a formatted project summary."""
-    tech_list = ", ".join(technologies)
-    return f"{name} uses {tech_list}."
-
-
-if __name__ == "__main__":
-    summary = showcase_project(
-        "Example Code",
-        ["Python", "Clean Structure", "Readable Logic"],
-    )
-    print(summary)
-
-# PASTE YOUR PYTHON CODE ABOVE THIS LINE
-          </script>
-        </div>
-      </section>
-
-      <!-- Certifications -->
+      <!-- Certifications & Skills -->
       <section class="snap-section certifications reveal" id="certifications">
         <div class="section-header">
-          <p class="eyebrow">Validation</p>
-          <h2>Certifications</h2>
+          <p class="eyebrow">Skills &amp; Validation</p>
+          <h2>Certifications &amp; Tech Stack</h2>
+        </div>
+        <div class="skills-block">
+          <div class="skills-group">
+            <p class="skills-group-label">Languages</p>
+            <div class="skills-chips">
+              <span class="skill-chip">Python</span>
+              <span class="skill-chip">TypeScript</span>
+              <span class="skill-chip">JavaScript</span>
+              <span class="skill-chip">Swift</span>
+              <span class="skill-chip">C</span>
+              <span class="skill-chip">C++</span>
+              <span class="skill-chip">C#</span>
+              <span class="skill-chip">Java</span>
+              <span class="skill-chip">SQL</span>
+              <span class="skill-chip">Bash</span>
+              <span class="skill-chip">PowerShell</span>
+              <span class="skill-chip">R</span>
+            </div>
+          </div>
+          <div class="skills-group">
+            <p class="skills-group-label">Frameworks &amp; Tools</p>
+            <div class="skills-chips">
+              <span class="skill-chip">Next.js</span>
+              <span class="skill-chip">React</span>
+              <span class="skill-chip">Node.js</span>
+              <span class="skill-chip">.NET</span>
+              <span class="skill-chip">PyTorch</span>
+              <span class="skill-chip">Docker</span>
+              <span class="skill-chip">Kubernetes</span>
+              <span class="skill-chip">Splunk</span>
+              <span class="skill-chip">Power BI</span>
+              <span class="skill-chip">PostgreSQL</span>
+              <span class="skill-chip">AWS</span>
+              <span class="skill-chip">Azure</span>
+              <span class="skill-chip">GCP</span>
+              <span class="skill-chip">CI/CD</span>
+              <span class="skill-chip">Git</span>
+              <span class="skill-chip">Linux</span>
+            </div>
+          </div>
         </div>
         <div class="cert-grid">
           <article class="cert-card">
@@ -752,14 +554,14 @@ if __name__ == "__main__":
       <!-- Experience -->
       <section class="snap-section experience reveal" id="experience">
         <div class="section-header">
-          <p class="eyebrow">Impact</p>
-          <h2>Experience</h2>
+          <p class="eyebrow">Career</p>
+          <h2>Experience &amp; Education</h2>
         </div>
         <div class="timeline" aria-label="Experience timeline">
           <article class="timeline-item">
             <div class="timeline-marker" aria-hidden="true"></div>
-            <div class="timeline-card">
-              <div class="timeline-date">May 2026 – August 2026</div>
+            <div class="timeline-card current">
+              <div class="timeline-date">May 2026 – August 2026 <span class="badge-current">Current</span></div>
               <h3>Cybersecurity Intern &mdash; Scotiabank</h3>
               <p>Investigating cyber-enabled fraud cases (phishing, malware, social engineering, account takeover, targeted cyber-attacks), gathering and preserving digital evidence to identify perpetrators and document TTPs. Applying data analytics with Python, Excel, and Splunk to detect fraud patterns; preparing investigative reports and trend analyses in Power BI and PowerPoint for senior management.</p>
             </div>
@@ -804,13 +606,12 @@ if __name__ == "__main__":
         <div class="section-header">
           <p class="eyebrow">Get in Touch</p>
           <h2>Let's build something meaningful</h2>
-          <p>Available for internships, freelance projects, and collaborations.</p>
+          <p>Open to co-op roles, freelance projects, and collaborations.</p>
         </div>
         <div class="contact-actions">
           <a class="btn primary" href="mailto:ayaanazfar2000@gmail.com">Email Me</a>
-          <a class="btn ghost" href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a>
           <a class="btn ghost" href="https://www.linkedin.com/in/ayaanazfar/" target="_blank" rel="noopener">LinkedIn</a>
-          <a class="btn outline" href="assets/images/Ayaan Azfar Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+          <a class="btn ghost" href="https://github.com/Ayaan06" target="_blank" rel="noopener">GitHub</a>
         </div>
         <p class="footer-note">&copy; <span id="year">2025</span> Ayaan Azfar</p>
       </section>

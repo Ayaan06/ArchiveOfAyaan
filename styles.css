@@ -472,10 +472,20 @@ body::before {
   font-size: clamp(2rem, 5vw, 3rem);
 }
 
+.project-copy p {
+  margin: 0 0 0.75rem;
+  line-height: 1.65;
+}
+
 .project-copy ul {
   padding-left: 1.25rem;
   color: var(--text-muted);
   line-height: 1.6;
+  margin: 0;
+}
+
+.project-copy li + li {
+  margin-top: 0.35rem;
 }
 
 .project-actions {
@@ -645,67 +655,110 @@ body::before {
   background: transparent;
 }
 
-.example-code {
-  background: transparent;
+/* Hero skill chips */
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.1rem 0 0;
 }
 
-.example-code .section-header p:last-child {
+.hero-chip {
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  border-radius: 999px;
+  border: 1px solid rgba(97, 244, 222, 0.25);
+  background: rgba(97, 244, 222, 0.05);
   color: var(--text-muted);
-  max-width: 48ch;
-  line-height: 1.6;
+  padding: 0.3rem 0.85rem;
 }
 
-.code-showcase {
+:root[data-theme='light'] .hero-chip {
+  border-color: rgba(37, 99, 235, 0.25);
+  background: rgba(37, 99, 235, 0.05);
+  color: #374151;
+}
+
+/* Skills block inside certifications */
+.skills-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  background: rgba(2, 6, 23, 0.78);
+  background: var(--surface);
   box-shadow: var(--shadow);
-  overflow: hidden;
 }
 
-:root[data-theme='light'] .code-showcase {
-  background: rgba(15, 23, 42, 0.96);
-}
-
-.code-toolbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 0.85rem 1.25rem;
-  border-bottom: 1px solid var(--card-border);
-  color: #dbeafe;
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 0.78rem;
-  letter-spacing: 0.08em;
+.skills-group-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.38em;
   text-transform: uppercase;
-}
-
-.code-toolbar span:last-child {
   color: var(--accent);
+  margin: 0 0 0.6rem;
 }
 
-.code-showcase pre {
-  margin: 0;
-  max-height: min(58vh, 620px);
-  overflow: auto;
-  padding: clamp(1rem, 3vw, 1.5rem);
+.skills-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
 }
 
-.code-showcase code {
-  display: block;
-  min-width: max-content;
-  color: #e8edf7;
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', monospace;
-  font-size: clamp(0.85rem, 1.8vw, 1rem);
-  line-height: 1.7;
-  tab-size: 4;
-  white-space: pre;
+.skill-chip {
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  padding: 0.28rem 0.85rem;
+  background: rgba(2, 6, 23, 0.35);
+  color: var(--text-muted);
+  transition: border-color var(--transition), color var(--transition);
+}
+
+.skill-chip:hover {
+  border-color: rgba(97, 244, 222, 0.4);
+  color: var(--text);
+}
+
+:root[data-theme='light'] .skill-chip {
+  background: rgba(15, 23, 42, 0.04);
+  color: #374151;
+}
+
+/* Current role badge on timeline */
+.timeline-card.current {
+  border-color: rgba(97, 244, 222, 0.35);
+  box-shadow: 0 0 0 1px rgba(97, 244, 222, 0.08), var(--shadow);
+}
+
+.badge-current {
+  display: inline-block;
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(97, 244, 222, 0.4);
+  border-radius: 999px;
+  padding: 0.12rem 0.6rem;
+  margin-left: 0.55rem;
+  vertical-align: middle;
+  background: rgba(97, 244, 222, 0.06);
+}
+
+.section-header {
+  margin-bottom: 0.5rem;
 }
 
 .section-header h2 {
   font-size: clamp(2rem, 4vw, 3rem);
   margin: 0;
+}
+
+.section-header > p:last-child {
+  color: var(--text-muted);
+  margin: 0.5rem 0 0;
+  line-height: 1.6;
 }
 
 .cert-grid {
@@ -748,6 +801,7 @@ body::before {
 
 .experience {
   background: transparent;
+  overflow-y: auto;
 }
 
 .timeline {
