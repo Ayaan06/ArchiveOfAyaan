@@ -1,0 +1,143 @@
+#!/usr/bin/env python3
+"""
+Extract password-protected ZIPs from Downloads, grouped by export, with a menu.
+
+Flow:
+  1. Scan Downloads and group the ZIPs by export.
+  2. Show a numbered list of groups (named by the file, minus _part / volume).
+  3. You pick one, several (e.g. 1,3), or all.
+  4. Enter the password once (hidden); selected groups are extracted.
+
+Each group extracts into ONE folder named after the file (minus _part / volume),
+with the contents of all its parts merged into that folder. If two parts contain
+a file with the same name, the script warns and the later one wins.
+
+  Extracted_Zips/
+        ... contents of part1 + part2 + part3 ...
+
+Requires: pip install pyzipper   (reads both AES and legacy ZipCrypto)
+"""
+
+import re
+import getpass
+import pyzipper
+from pathlib import Path
+from collections import defaultdict
+
+# ---------------- Config ----------------
+DOWNLOADS = Path.home() / "Downloads"
+DEST = Path.home() / "Downloads" / "Extracted_Zips"
+DELETE_AFTER = False                       # True = delete each ZIP after a clean extract
+# ----------------------------------------
+
+ENUM = re.compile(r"E\d{6,}")                          # export id, e.g. E00011129
+VOL  = re.compile(r"(?:PSTs\.)?(\d{3})(?=\.)", re.I)   # volume marker, e.g. .001
+PART = re.compile(r"_part(\d+)", re.I)                 # multipart marker, e.g. _part2
+
+
+def group_key(stem):
+    """Unique key per export: E-number if present, else the name minus its volume marker."""
+    m = ENUM.search(stem)
+    if m:
+        return m.group(0)
+    return VOL.sub("", stem)        # drop ".001" so volumes of one export share a key
+
+
+def display_name(files):
+    """Group/folder name: a representative filename minus the _part / volume marker."""
+    stem = sorted(files)[0].stem
+    stem = PART.sub("", stem)       # remove _part2
+    stem = VOL.sub("", stem)        # remove .001 volume marker
+    return stem.strip("._-")
+
+
+def choose(n):
+    """Return a list of 0-based indices the user picked, or [] to quit."""
+    while True:
+        raw = input("\nSelect group(s) to extract (e.g. 1, or 1,3, or 'all', or 'q' to quit): ").strip().lower()
+        if raw in ("q", "quit", ""):
+            return []
+        if raw in ("all", "a", "*"):
+            return list(range(n))
+        try:
+            picks = [int(p) - 1 for p in re.split(r"[,\s]+", raw) if p]
+        except ValueError:
+            print("  Enter numbers like 1 or 1,3, or 'all'.")
+            continue
+        if picks and all(0 <= p < n for p in picks):
+            return sorted(set(picks))
+        print(f"  Numbers must be between 1 and {n}.")
+
+
+def extract_group(folder, files, pw):
+    """Extract every file in the group into one folder, merging their contents."""
+    out = DEST / folder
+    out.mkdir(parents=True, exist_ok=True)
+    seen = set()
+    ok = fail = 0
+    for z in sorted(files):
+        try:
+            with pyzipper.AESZipFile(z) as zf:
+                names = [n for n in zf.namelist() if not n.endswith("/")]
+                clash = [n for n in names if n in seen]
+                if clash:
+                    shown = ", ".join(clash[:3]) + ("..." if len(clash) > 3 else "")
+                    print(f"  WARN {z.name}: {len(clash)} file(s) overwrite earlier ones ({shown})")
+                zf.extractall(path=out, pwd=pw)
+                seen.update(names)
+            print(f"  OK   {z.name} -> {out}")
+            ok += 1
+            if DELETE_AFTER:
+                z.unlink()
+        except RuntimeError as e:
+            print(f"  FAIL {z.name}: {e}")      # usually a wrong password
+            fail += 1
+        except pyzipper.BadZipFile:
+            print(f"  FAIL {z.name}: not a valid zip")
+            fail += 1
+    return ok, fail
+
+
+def main():
+    DEST.mkdir(parents=True, exist_ok=True)
+
+    zips = sorted(DOWNLOADS.glob("*.zip"))
+    if not zips:
+        print(f"No ZIP files found in {DOWNLOADS}")
+        return
+
+    grouped = defaultdict(list)
+    for z in zips:
+        grouped[group_key(z.stem)].append(z)
+
+    items = sorted(
+        ((display_name(files), files) for files in grouped.values()),
+        key=lambda kv: kv[0],
+    )
+
+    print(f"\nFound {len(zips)} ZIP(s) in {len(items)} group(s):\n")
+    for i, (label, files) in enumerate(items, 1):
+        print(f"  {i}. {label}  ({len(files)} file{'s' if len(files) != 1 else ''})")
+
+    picks = choose(len(items))
+    if not picks:
+        print("Nothing selected. Exiting.")
+        return
+
+    # Hidden prompt: input is not echoed and never stored in the file.
+    pw = getpass.getpass("\nPassword (used for all selected ZIPs): ").encode()
+
+    ok = fail = 0
+    for idx in picks:
+        label, files = items[idx]
+        print(f"\n[{label}]")
+        a, b = extract_group(label, files, pw)
+        ok += a
+        fail += b
+
+    del pw  # drop the password reference once done
+    print(f"\nDone. {ok} extracted, {fail} failed.")
+
+
+if __name__ == "__main__":
+    main()
